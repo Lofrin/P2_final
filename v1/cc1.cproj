@@ -4,7 +4,7 @@
     <SchemaVersion>2.0</SchemaVersion>
     <ProjectVersion>6.1</ProjectVersion>
     <ToolchainName>com.HPInfoTech.CodeVisionAVR.C</ToolchainName>
-    <ProjectGuid>{64FE702F-423D-497C-A76A-A46C3F34E8A0}</ProjectGuid>
+    <ProjectGuid>{50F07266-423D-497C-A76A-A46C3F34E8A0}</ProjectGuid>
     <avrdevice>ATmega164A</avrdevice>
     <avrdeviceseries>none</avrdeviceseries>
     <OutputType>Executable</OutputType>
@@ -40,6 +40,9 @@
       <SubType>compile</SubType>
     </Compile>
     <Compile Include="init.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="functii.c">
       <SubType>compile</SubType>
     </Compile>
   </ItemGroup>

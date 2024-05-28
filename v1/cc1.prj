@@ -1,6 +1,6 @@
 [Project]
 Toolset=AVR
-Files=2
+Files=3
 OpenedFiles=4
 TerminalTop=-30
 TerminalLeft=-4
@@ -254,7 +254,7 @@ OutputListFilesDirectory=
 OutputObjectFilesDirectory=
 OutputExecutableFilesDirectory=
 OutputLinkerFilesDirectory=
-AllowDisplayFunctionCallTree=1
+AllowDisplayFunctionCallTree=0
 EditorPanelMode=0
 ActiveEditorPanel=0
 EditorPanel0=0
@@ -263,7 +263,7 @@ EditorPanel1=0
 TimeStamp1=1485922640
 PageIndex1=1
 EditorPanel2=0
-TimeStamp2=1488742115
+TimeStamp2=1488743865
 PageIndex2=2
 EditorPanel3=0
 TimeStamp3=1016487376
@@ -287,6 +287,7 @@ TimeStamp7=1488696372
 PageIndex7=7
 F1=main.c
 F2=init.c
+F3=functii.c
 
 [Compiler]
 Chip=ATmega164A
@@ -374,7 +375,7 @@ LibraryPath28=
 LibraryPath29=
 LibraryPath30=
 LibraryPath31=
-Build=210
+Build=244
 HeapSize=0
 InterruptVectorsNumber=31
 InterruptVectorJump=1
@@ -417,8 +418,8 @@ WarningCantAllocVarToReg=1
 WarningDataStackUsage=1
 WarningHardwareStackLow=1
 WarningCOFFFileNameTruncation=1
-RebuildAll=0
-LinkageInformationPresent=1
+RebuildAll=1
+LinkageInformationPresent=0
 AVR8LHardwareStackSize=16
 UseHiGPIORbit=1
 EnhancedFunctionParameterPassing=1
@@ -453,7 +454,7 @@ WarningMemoryOverlap=1
 WarningFuncDeclaredNeverDefined=1
 WarningExternalDeclaredNeverDefined=1
 WarningUnknownPragma=1
-COFFileTimeStamp=1488742088
+COFFileTimeStamp=1488757029
 OutputFormat=1
 WarningCantInlineFunction=1
 WarningStaticRamEepromStorageAllocConstStrLit=0
@@ -624,7 +625,7 @@ Row=0
 Column=0
 ScrollPosX=0
 ScrollPosY=0
-TimeStamp=1488742478
+TimeStamp=1488743888
 [BookmarksFoldedCode]
 Files=16
 F1=main.c
@@ -644,11 +645,11 @@ F14=twi_master.h
 F15=C:\Pt.faculta\CodeVision AVR\inc\stdint.h
 F16=C:\Pt.faculta\CodeVision AVR\inc\mega324_bits.h
 [Bookmarks1]
-TimeStamp=1488742115
-Row=247
-Column=52
+TimeStamp=1488743865
+Row=258
+Column=51
 ScrollPosX=0
-ScrollPosY=178
+ScrollPosY=229
 BK0=-1
 BK1=-1
 BK2=-1
@@ -676,11 +677,11 @@ BK7=-1
 BK8=-1
 BK9=-1
 [Bookmarks3]
-TimeStamp=1485922640
-Row=20
-Column=8
+TimeStamp=1488757069
+Row=60
+Column=28
 ScrollPosX=0
-ScrollPosY=20
+ScrollPosY=59
 BK0=-1
 BK1=-1
 BK2=-1
@@ -712,7 +713,7 @@ Blocks=0
 [CompilerDebug]
 RebuildAll=1
 LinkageInformationPresent=0
-Build=210
+Build=244
 UseEEPROMLocation0=0
 Chip=ATmega164A
 CPUClock=20000000
@@ -826,41 +827,41 @@ L13=Enhanced function parameters passing: Yes
 L14=Automatic register allocation: Yes
 L15=Smart register allocation: Yes
 L16=
-L17=Build: 209
-L18=13936 line(s) compiled
+L17=Build: 244
+L18=13960 line(s) compiled
 L19=No errors
-L20=No warnings
+L20=1 warning(s)
 L21=
 L22=Bit variables area: 0x2 to 0x2
 L23=Bit variables size: 1 byte(s)
 L24=
 L25=Data Stack area: 0x100 to 0x1FF
 L26=Data Stack size: 256 byte(s)
-L27=Estimated Data Stack usage: 10 byte(s)
+L27=Estimated Data Stack usage: 12 byte(s)
 L28=
-L29=RAM Global variables area: 0x200 to 0x213
-L30=RAM Global variables size: 20 byte(s)
+L29=RAM Global variables area: 0x200 to 0x215
+L30=RAM Global variables size: 22 byte(s)
 L31=
-L32=Hardware Stack area: 0x214 to 0x4FF
-L33=Hardware Stack size: 748 byte(s)
+L32=Hardware Stack area: 0x216 to 0x4FF
+L33=Hardware Stack size: 746 byte(s)
 L34=
 L35=Heap size: 0 byte(s)
 L36=
 L37=EEPROM usage: 0 byte(s), 0,0% of EEPROM
-L38=Program size: 516 words (1032 bytes), 6,3% of FLASH
-L39=27 words (54 bytes), 5,0% reduced by Code Compression
+L38=Program size: 702 words (1404 bytes), 8,6% of FLASH
+L39=38 words (76 bytes), 5,1% reduced by Code Compression
 Lines=39
 [BuildInfoAssembler]
 L1=AVRASM: AVR macro assembler 2.1.30 (build 592 Nov  7 2008 12:38:17)
 L2=Copyright (C) 1995-2008 ATMEL Corporation
 L3=
-L4=C:\Users\Florin\Desktop\v1\cc1.asm(2141): No EEPROM data, deleting C:\Users\Florin\Desktop\v1\cc1.eep
+L4=C:\Users\Florin\Desktop\ProiectulP2\v1\cc1.asm(2381): No EEPROM data, deleting C:\Users\Florin\Desktop\ProiectulP2\v1\cc1.eep
 L5=
 L6=ATmega164A memory use summary [bytes]:
 L7=Segment   Begin    End      Code   Data   Used    Size   Use%
 L8=---------------------------------------------------------------
-L9=[.cseg] 0x000000 0x000408    994     38   1032   16384   6.3%
-L10=[.dseg] 0x000100 0x000214      0     20     20    1024   2.0%
+L9=[.cseg] 0x000000 0x00057c   1358     46   1404   16384   8.6%
+L10=[.dseg] 0x000100 0x000216      0     22     22    1024   2.1%
 L11=[.eseg] 0x000000 0x000001      0      0      0     512   0.0%
 L12=
 Lines=12
@@ -962,8 +963,8 @@ BK8=-1
 BK9=-1
 [Bookmarks10]
 TimeStamp=1045597212
-Row=15
-Column=0
+Row=19
+Column=20
 ScrollPosX=0
 ScrollPosY=0
 BK0=-1
@@ -1054,8 +1055,6 @@ Blocks=0
 Blocks=0
 [FoldedCode11]
 Blocks=0
-[FoldedCode10]
-Blocks=0
 [Bookmarks15]
 TimeStamp=953301748
 Row=11
@@ -1074,10 +1073,31 @@ BK8=-1
 BK9=-1
 [FoldedCode15]
 Blocks=0
+[Bookmarks16]
+TimeStamp=1016487376
+Row=118
+Column=11
+ScrollPosX=0
+ScrollPosY=100
+BK0=-1
+BK1=-1
+BK2=-1
+BK3=-1
+BK4=-1
+BK5=-1
+BK6=-1
+BK7=-1
+BK8=-1
+BK9=-1
+[FoldedCode1]
+Line1=175
+Blocks=1
+[FoldedCode16]
+Blocks=0
 [HeadersList]
 Files=2
-F1=C:\Users\Florin\Desktop\v1\main.c
-F2=C:\Users\Florin\Desktop\v1\init.c
+F1=C:\Users\Florin\Desktop\ProiectulP2\v1\main.c
+F2=C:\Users\Florin\Desktop\ProiectulP2\v1\init.c
 [Header1]
 Files=12
 F1=C:\Pt.faculta\CodeVision AVR\inc\mega164a.h
@@ -1098,29 +1118,9 @@ F1=C:\Pt.faculta\CodeVision AVR\inc\mega164a.h
 F2=C:\Pt.faculta\CodeVision AVR\inc\mega324_bits.h
 F3=defs.h
 F4=funct.h
-[FoldedCode1]
-Line1=175
-Line2=196
-Blocks=2
 [FoldedCode2]
 Blocks=0
-[Bookmarks16]
-TimeStamp=1016487376
-Row=118
-Column=11
-ScrollPosX=0
-ScrollPosY=100
-BK0=-1
-BK1=-1
-BK2=-1
-BK3=-1
-BK4=-1
-BK5=-1
-BK6=-1
-BK7=-1
-BK8=-1
-BK9=-1
-[FoldedCode16]
+[FoldedCode10]
 Blocks=0
 [FoldedCode3]
 Blocks=0
