@@ -1,0 +1,8 @@
+VERSION:3 SOURCE_TIMESTAMP:58BCA460
+NODE:I LEVEL:0 LINE:1 "C:\Users\Florin\Desktop\ProiectulP2\v1\functii.h"
+NODE:I LEVEL:0 LINE:2 "C:\Pt.faculta\CodeVision AVR\inc\mega164a.h"
+NODE:I LEVEL:0 LINE:3 "C:\Pt.faculta\CodeVision AVR\inc\delay.h"
+NODE:I LEVEL:0 LINE:4 "C:\Pt.faculta\CodeVision AVR\inc\stdio.h"
+NODE:F LEVEL:0 LINE:6 "ButoaneUpdate(void)"
+NODE:V LEVEL:0 LINE:7 "StareButoaneInainte_S0020000000 -> RAM:????"
+NODE:F LEVEL:0 LINE:57 "TrimiteButoane(unsigned int Butoane)"
