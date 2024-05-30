@@ -23,5 +23,5 @@
 #define TESTP PORTD.4       // test bit durations
 #include "funct.h"
 
-#define AdresaNebuna 0x27
+#define AdresaDisplay 0x27
 #endif
