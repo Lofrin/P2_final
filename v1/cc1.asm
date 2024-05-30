@@ -1096,11 +1096,6 @@ __DELAY_USW_LOOP:
 	.DEF _tx_rd_index0=R7
 	.DEF _tx_counter0=R6
 	.DEF _caracterUrmator=R9
-	.DEF _remiza=R8
-	.DEF _castigat=R11
-	.DEF __Addr=R10
-	.DEF __displayfunction=R13
-	.DEF __displaycontrol=R12
 
 ;GPIOR0-GPIOR2 INITIALIZATION VALUES
 	.EQU __GPIOR0_INIT=0x00
@@ -1127,7 +1122,7 @@ __START_OF_CODE:
 	JMP  0x00
 	JMP  0x00
 	JMP  0x00
-	JMP  _timer1_compa_isr
+	JMP  0x00
 	JMP  0x00
 	JMP  0x00
 	JMP  0x00
@@ -1154,18 +1149,79 @@ _tbl16_G100:
 
 ;GLOBAL REGISTER VARIABLES INITIALIZATION
 __REG_VARS:
-	.DB  0x9,0x58,0x0,0x0
+	.DB  0x58
 
-_0x16:
+_0x40003:
 	.DB  0x2E,0x2E,0x2E,0x2E,0x2E,0x2E,0x2E,0x2E
 	.DB  0x2E
-_0x0:
-	.DB  0xD,0x53,0x55,0x49,0x49,0x49,0x49,0x49
-	.DB  0x49,0x49,0x49,0x20,0x61,0x20,0x63,0x61
-	.DB  0x73,0x74,0x69,0x67,0x61,0x74,0x20,0x25
-	.DB  0x63,0xD,0x0,0x4D,0x69,0x20,0x73,0x65
-	.DB  0x20,0x66,0x61,0x63,0x65,0x20,0x72,0x61
-	.DB  0x75,0x0
+_0x40004:
+	.DB  0x9
+_0x40005:
+	.DB  0x0,0x0,0x0,0x0,0x0,0x0,0x0,0x0
+	.DB  0x18,0x3C,0x3C,0x18,0x18,0x0,0x18,0x0
+	.DB  0x36,0x36,0x0,0x0,0x0,0x0,0x0,0x0
+	.DB  0x36,0x36,0x7F,0x36,0x7F,0x36,0x36,0x0
+	.DB  0xC,0x3E,0x3,0x1E,0x30,0x1F,0xC,0x0
+	.DB  0x0,0x63,0x33,0x18,0xC,0x66,0x63,0x0
+	.DB  0x1C,0x36,0x1C,0x6E,0x3B,0x33,0x6E,0x0
+	.DB  0x6,0x6,0x3,0x0,0x0,0x0,0x0,0x0
+	.DB  0x18,0xC,0x6,0x6,0x6,0xC,0x18,0x0
+	.DB  0x6,0xC,0x18,0x18,0x18,0xC,0x6,0x0
+	.DB  0x0,0x66,0x3C,0xFF,0x3C,0x66,0x0,0x0
+	.DB  0x0,0xC,0xC,0x3F,0xC,0xC,0x0,0x0
+	.DB  0x0,0x0,0x0,0x0,0x0,0xC,0xC,0x6
+	.DB  0x0,0x0,0x0,0x3F,0x0,0x0,0x0,0x0
+	.DB  0x0,0x0,0x0,0x0,0x0,0xC,0xC,0x0
+	.DB  0x60,0x30,0x18,0xC,0x6,0x3,0x1,0x0
+	.DB  0x3E,0x63,0x73,0x7B,0x6F,0x67,0x3E,0x0
+	.DB  0xC,0xE,0xC,0xC,0xC,0xC,0x3F,0x0
+	.DB  0x1E,0x33,0x30,0x1C,0x6,0x33,0x3F,0x0
+	.DB  0x1E,0x33,0x30,0x1C,0x30,0x33,0x1E,0x0
+	.DB  0x38,0x3C,0x36,0x33,0x7F,0x30,0x78,0x0
+	.DB  0x3F,0x3,0x1F,0x30,0x30,0x33,0x1E,0x0
+	.DB  0x1C,0x6,0x3,0x1F,0x33,0x33,0x1E,0x0
+	.DB  0x3F,0x33,0x30,0x18,0xC,0xC,0xC,0x0
+	.DB  0x1E,0x33,0x33,0x1E,0x33,0x33,0x1E,0x0
+	.DB  0x1E,0x33,0x33,0x3E,0x30,0x18,0xE,0x0
+	.DB  0x0,0xC,0xC,0x0,0x0,0xC,0xC,0x0
+	.DB  0x0,0xC,0xC,0x0,0x0,0xC,0xC,0x6
+	.DB  0x18,0xC,0x6,0x3,0x6,0xC,0x18,0x0
+	.DB  0x0,0x0,0x3F,0x0,0x0,0x3F,0x0,0x0
+	.DB  0x6,0xC,0x18,0x30,0x18,0xC,0x6,0x0
+	.DB  0x1E,0x33,0x30,0x18,0xC,0x0,0xC,0x0
+	.DB  0x3E,0x63,0x7B,0x7B,0x7B,0x3,0x1E,0x0
+	.DB  0xC,0x1E,0x33,0x33,0x3F,0x33,0x33,0x0
+	.DB  0x3F,0x66,0x66,0x3E,0x66,0x66,0x3F,0x0
+	.DB  0x3C,0x66,0x3,0x3,0x3,0x66,0x3C,0x0
+	.DB  0x1F,0x36,0x66,0x66,0x66,0x36,0x1F,0x0
+	.DB  0x7F,0x46,0x16,0x1E,0x16,0x46,0x7F,0x0
+	.DB  0x7F,0x46,0x16,0x1E,0x16,0x6,0xF,0x0
+	.DB  0x3C,0x66,0x3,0x3,0x73,0x66,0x7C,0x0
+	.DB  0x33,0x33,0x33,0x3F,0x33,0x33,0x33,0x0
+	.DB  0x1E,0xC,0xC,0xC,0xC,0xC,0x1E,0x0
+	.DB  0x78,0x30,0x30,0x30,0x33,0x33,0x1E,0x0
+	.DB  0x67,0x66,0x36,0x1E,0x36,0x66,0x67,0x0
+	.DB  0xF,0x6,0x6,0x6,0x46,0x66,0x7F,0x0
+	.DB  0x63,0x77,0x7F,0x7F,0x6B,0x63,0x63,0x0
+	.DB  0x63,0x67,0x6F,0x7B,0x73,0x63,0x63,0x0
+	.DB  0x1C,0x36,0x63,0x63,0x63,0x36,0x1C,0x0
+	.DB  0x3F,0x66,0x66,0x3E,0x6,0x6,0xF,0x0
+	.DB  0x1E,0x33,0x33,0x33,0x3B,0x1E,0x38,0x0
+	.DB  0x3F,0x66,0x66,0x3E,0x36,0x66,0x67,0x0
+	.DB  0x1E,0x33,0x7,0xE,0x38,0x33,0x1E,0x0
+	.DB  0x3F,0x2D,0xC,0xC,0xC,0xC,0x1E,0x0
+	.DB  0x33,0x33,0x33,0x33,0x33,0x33,0x3F,0x0
+	.DB  0x33,0x33,0x33,0x33,0x33,0x1E,0xC,0x0
+	.DB  0x63,0x63,0x63,0x6B,0x7F,0x77,0x63,0x0
+	.DB  0x63,0x63,0x36,0x1C,0x1C,0x36,0x63,0x0
+	.DB  0x33,0x33,0x33,0x1E,0xC,0xC,0x1E,0x0
+	.DB  0x7F,0x63,0x31,0x18,0x4C,0x66,0x7F,0x0
+	.DB  0x1E,0x6,0x6,0x6,0x6,0x6,0x1E,0x0
+	.DB  0x3,0x6,0xC,0x18,0x30,0x60,0x40,0x0
+	.DB  0x1E,0x18,0x18,0x18,0x18,0x18,0x1E,0x0
+	.DB  0x8,0x1C,0x36,0x63,0x0,0x0,0x0,0x0
+	.DB  0x0,0x0,0x0,0x0,0x0,0x0,0x0,0xFF
+	.DB  0xC,0xC,0x18
 _0x2040060:
 	.DB  0x1
 _0x2040000:
@@ -1173,13 +1229,21 @@ _0x2040000:
 	.DB  0x0
 
 __GLOBAL_INI_TBL:
-	.DW  0x04
-	.DW  0x08
+	.DW  0x01
+	.DW  0x09
 	.DW  __REG_VARS*2
 
 	.DW  0x09
 	.DW  _displayJoc
-	.DW  _0x16*2
+	.DW  _0x40003*2
+
+	.DW  0x01
+	.DW  _remiza
+	.DW  _0x40004*2
+
+	.DW  0x203
+	.DW  _font8x8_basic
+	.DW  _0x40005*2
 
 	.DW  0x01
 	.DW  __seed_G102
@@ -1420,7 +1484,7 @@ _0x5:
 _0x3:
 	LD   R16,Y+
 	LD   R17,Y+
-	RJMP _0x4C
+	RJMP _0x2B
 ; .FEND
 ;
 ;#ifndef _DEBUG_TERMINAL_IO_
@@ -1429,41 +1493,18 @@ _0x3:
 ;#pragma used+
 ;char getchar(void)
 ; 0000 0063 {
-_getchar:
-; .FSTART _getchar
 ; 0000 0064 char data;
 ; 0000 0065 while (rx_counter0==0);
-	ST   -Y,R17
 ;	data -> R17
-_0x8:
-	TST  R5
-	BREQ _0x8
 ; 0000 0066 data=rx_buffer0[rx_rd_index0++];
-	MOV  R30,R2
-	INC  R2
-	LDI  R31,0
-	SUBI R30,LOW(-_rx_buffer0)
-	SBCI R31,HIGH(-_rx_buffer0)
-	LD   R17,Z
 ; 0000 0067 #if RX_BUFFER_SIZE0 != 256
 ; 0000 0068 if (rx_rd_index0 == RX_BUFFER_SIZE0) rx_rd_index0=0;
-	LDI  R30,LOW(8)
-	CP   R30,R2
-	BRNE _0xB
-	CLR  R2
 ; 0000 0069 #endif
 ; 0000 006A #asm("cli")
-_0xB:
-	cli
 ; 0000 006B --rx_counter0;
-	DEC  R5
 ; 0000 006C #asm("sei")
-	sei
 ; 0000 006D return data;
-	MOV  R30,R17
-	RJMP _0x20A0001
 ; 0000 006E }
-; .FEND
 ;#pragma used-
 ;#endif
 ;
@@ -1511,7 +1552,7 @@ _usart0_tx_isr:
 _0xD:
 ; 0000 0087 }
 _0xC:
-_0x4C:
+_0x2B:
 	LD   R30,Y+
 	OUT  SREG,R30
 	LD   R31,Y+
@@ -1525,57 +1566,21 @@ _0x4C:
 ;#pragma used+
 ;void putchar(char c)
 ; 0000 008E {
-_putchar:
-; .FSTART _putchar
 ; 0000 008F while (tx_counter0 == TX_BUFFER_SIZE0);
-	ST   -Y,R26
 ;	c -> Y+0
-_0xE:
-	LDI  R30,LOW(8)
-	CP   R30,R6
-	BREQ _0xE
 ; 0000 0090 #asm("cli")
-	cli
 ; 0000 0091 if (tx_counter0 || ((UCSR0A & DATA_REGISTER_EMPTY)==0))
-	TST  R6
-	BRNE _0x12
-	LDS  R30,192
-	ANDI R30,LOW(0x20)
-	BRNE _0x11
-_0x12:
 ; 0000 0092    {
 ; 0000 0093    tx_buffer0[tx_wr_index0++]=c;
-	MOV  R30,R4
-	INC  R4
-	LDI  R31,0
-	SUBI R30,LOW(-_tx_buffer0)
-	SBCI R31,HIGH(-_tx_buffer0)
-	LD   R26,Y
-	STD  Z+0,R26
 ; 0000 0094 #if TX_BUFFER_SIZE0 != 256
 ; 0000 0095    if (tx_wr_index0 == TX_BUFFER_SIZE0) tx_wr_index0=0;
-	LDI  R30,LOW(8)
-	CP   R30,R4
-	BRNE _0x14
-	CLR  R4
 ; 0000 0096 #endif
 ; 0000 0097    ++tx_counter0;
-_0x14:
-	INC  R6
 ; 0000 0098    }
 ; 0000 0099 else
-	RJMP _0x15
-_0x11:
 ; 0000 009A    UDR0=c;
-	LD   R30,Y
-	STS  198,R30
 ; 0000 009B #asm("sei")
-_0x15:
-	sei
 ; 0000 009C }
-	ADIW R28,1
-	RET
-; .FEND
 ;#pragma used-
 ;#endif
 ;//*************************************************************************************************
@@ -1583,440 +1588,120 @@ _0x15:
 ;//*************************************************************************************************
 ;//*******   if you need USART1, enable it in Code Wizard and copy coresponding code here  *********
 ;//*************************************************************************************************
-;
-;/*
-; * Timer 1 Output Compare A interrupt is used to blink LED
-; */
-;
-;interrupt [TIM1_COMPA] void timer1_compa_isr(void)
-; 0000 00AA {
-_timer1_compa_isr:
-; .FSTART _timer1_compa_isr
-; 0000 00AB //LED1 = ~LED1; // invert LED
-; 0000 00AC }
-	RETI
-; .FEND
-;
 ;/*
 ; * main function of program
 ; */
-;unsigned char displayJoc[9] = {'.', '.', '.','.', '.', '.','.', '.', '.'};
-
-	.DSEG
-;unsigned char caracterUrmator = 'X', remiza = 9, castigat = 0;
-;
-;void UpdateJoc(unsigned short butoane){
-; 0000 00B4 void UpdateJoc(unsigned short butoane){
-
-	.CSEG
-_UpdateJoc:
-; .FSTART _UpdateJoc
-; 0000 00B5     unsigned char i, j;
-; 0000 00B6     for(i=0;i<3;i++){
-	ST   -Y,R27
-	ST   -Y,R26
-	ST   -Y,R17
-	ST   -Y,R16
-;	butoane -> Y+2
-;	i -> R17
-;	j -> R16
-	LDI  R17,LOW(0)
-_0x18:
-	CPI  R17,3
-	BRSH _0x19
-; 0000 00B7         for(j=0; j<3;j++){
-	LDI  R16,LOW(0)
-_0x1B:
-	CPI  R16,3
-	BRSH _0x1C
-; 0000 00B8             if((butoane & ((unsigned short)1<<(i*4+j))) != 0){
-	MOV  R30,R17
-	LSL  R30
-	LSL  R30
-	ADD  R30,R16
-	CALL SUBOPT_0x0
-	LDD  R26,Y+2
-	LDD  R27,Y+2+1
-	AND  R30,R26
-	AND  R31,R27
-	SBIW R30,0
-	BREQ _0x1D
-; 0000 00B9                 if( displayJoc[j*3U+(2U-i)] == '.'){
-	CALL SUBOPT_0x1
-	LD   R26,Z
-	CPI  R26,LOW(0x2E)
-	BRNE _0x1E
-; 0000 00BA                     remiza--;
-	DEC  R8
-; 0000 00BB                     displayJoc[j*3U+(2U-i)] = caracterUrmator;
-	CALL SUBOPT_0x1
-	ST   Z,R9
-; 0000 00BC                     if(caracterUrmator == 'X'){
-	LDI  R30,LOW(88)
-	CP   R30,R9
-	BRNE _0x1F
-; 0000 00BD                         caracterUrmator = '0';
-	LDI  R30,LOW(48)
-	RJMP _0x4B
-; 0000 00BE                     }
-; 0000 00BF                     else{
-_0x1F:
-; 0000 00C0                         caracterUrmator = 'X';
-	LDI  R30,LOW(88)
-_0x4B:
-	MOV  R9,R30
-; 0000 00C1                     }
-; 0000 00C2                 }
-; 0000 00C3                 break;
-_0x1E:
-	RJMP _0x1C
-; 0000 00C4             }
-; 0000 00C5         }
-_0x1D:
-	SUBI R16,-1
-	RJMP _0x1B
-_0x1C:
-; 0000 00C6 
-; 0000 00C7     }
-	SUBI R17,-1
-	RJMP _0x18
-_0x19:
-; 0000 00C8 }
-	LDD  R17,Y+1
-	LDD  R16,Y+0
-	ADIW R28,4
-	RET
-; .FEND
-;
-;void VerificaInvingatorul(){
-; 0000 00CA void VerificaInvingatorul(){
-_VerificaInvingatorul:
-; .FSTART _VerificaInvingatorul
-; 0000 00CB     unsigned char i;
-; 0000 00CC     for(i=0;i<3;i++){
-	ST   -Y,R17
-;	i -> R17
-	LDI  R17,LOW(0)
-_0x22:
-	CPI  R17,3
-	BRLO PC+2
-	RJMP _0x23
-; 0000 00CD         if(((displayJoc[i*3U] == displayJoc[i*3U+1U]) &&( displayJoc[i*3U+1U] == displayJoc[i*3U+2U])) && displayJoc[i*3 ...
-	LDI  R30,LOW(3)
-	MUL  R30,R17
-	MOVW R30,R0
-	MOVW R22,R30
-	SUBI R30,LOW(-_displayJoc)
-	SBCI R31,HIGH(-_displayJoc)
-	LD   R26,Z
-	MOVW R30,R0
-	__ADDW1MN _displayJoc,1
-	LD   R30,Z
-	CP   R30,R26
-	BRNE _0x25
-	MOVW R30,R22
-	__ADDW1MN _displayJoc,1
-	LD   R26,Z
-	MOVW R30,R22
-	__ADDW1MN _displayJoc,2
-	LD   R30,Z
-	CP   R30,R26
-	BREQ _0x26
-_0x25:
-	RJMP _0x27
-_0x26:
-	MOVW R30,R22
-	SUBI R30,LOW(-_displayJoc)
-	SBCI R31,HIGH(-_displayJoc)
-	LD   R26,Z
-	CPI  R26,LOW(0x2E)
-	BRNE _0x28
-_0x27:
-	RJMP _0x24
-_0x28:
-; 0000 00CE             castigat = displayJoc[i*3U];
-	LDI  R30,LOW(3)
-	MUL  R30,R17
-	MOVW R30,R0
-	SUBI R30,LOW(-_displayJoc)
-	SBCI R31,HIGH(-_displayJoc)
-	LD   R11,Z
-; 0000 00CF         }
-; 0000 00D0         if(((displayJoc[i] == displayJoc[i+3U]) &&( displayJoc[i+3U] == displayJoc[i+6U])) && displayJoc[i] != '.'){
-_0x24:
-	MOV  R30,R17
-	LDI  R31,0
-	SUBI R30,LOW(-_displayJoc)
-	SBCI R31,HIGH(-_displayJoc)
-	LD   R26,Z
-	MOV  R30,R17
-	LDI  R31,0
-	__ADDW1MN _displayJoc,3
-	LD   R30,Z
-	CP   R30,R26
-	BRNE _0x2A
-	MOV  R30,R17
-	LDI  R31,0
-	__ADDW1MN _displayJoc,3
-	LD   R26,Z
-	MOV  R30,R17
-	LDI  R31,0
-	__ADDW1MN _displayJoc,6
-	LD   R30,Z
-	CP   R30,R26
-	BREQ _0x2B
-_0x2A:
-	RJMP _0x2C
-_0x2B:
-	MOV  R30,R17
-	LDI  R31,0
-	SUBI R30,LOW(-_displayJoc)
-	SBCI R31,HIGH(-_displayJoc)
-	LD   R26,Z
-	CPI  R26,LOW(0x2E)
-	BRNE _0x2D
-_0x2C:
-	RJMP _0x29
-_0x2D:
-; 0000 00D1             castigat = displayJoc[i];
-	MOV  R30,R17
-	LDI  R31,0
-	SUBI R30,LOW(-_displayJoc)
-	SBCI R31,HIGH(-_displayJoc)
-	LD   R11,Z
-; 0000 00D2         }
-; 0000 00D3     }
-_0x29:
-	SUBI R17,-1
-	RJMP _0x22
-_0x23:
-; 0000 00D4     if(((displayJoc[0U] == displayJoc[4U]) &&( displayJoc[4U] == displayJoc[8U])) && displayJoc[0U] != '.'){
-	__GETB1MN _displayJoc,4
-	LDS  R26,_displayJoc
-	CP   R30,R26
-	BRNE _0x2F
-	__GETB2MN _displayJoc,4
-	__GETB1MN _displayJoc,8
-	CP   R30,R26
-	BREQ _0x30
-_0x2F:
-	RJMP _0x31
-_0x30:
-	LDS  R26,_displayJoc
-	CPI  R26,LOW(0x2E)
-	BRNE _0x32
-_0x31:
-	RJMP _0x2E
-_0x32:
-; 0000 00D5             castigat = displayJoc[4U];
-	__GETBRMN 11,_displayJoc,4
-; 0000 00D6     }
-; 0000 00D7     if(((displayJoc[6U] == displayJoc[4U]) &&( displayJoc[4U] == displayJoc[2U])) && displayJoc[2U] != '.'){
-_0x2E:
-	__GETB2MN _displayJoc,6
-	__GETB1MN _displayJoc,4
-	CP   R30,R26
-	BRNE _0x34
-	__GETB2MN _displayJoc,4
-	__GETB1MN _displayJoc,2
-	CP   R30,R26
-	BREQ _0x35
-_0x34:
-	RJMP _0x36
-_0x35:
-	__GETB2MN _displayJoc,2
-	CPI  R26,LOW(0x2E)
-	BRNE _0x37
-_0x36:
-	RJMP _0x33
-_0x37:
-; 0000 00D8             castigat = displayJoc[4U];
-	__GETBRMN 11,_displayJoc,4
-; 0000 00D9     }
-; 0000 00DA     if(castigat){
-_0x33:
-	TST  R11
-	BREQ _0x38
-; 0000 00DB         LED1 = 1;
-	SBI  0xB,6
-; 0000 00DC         printf("\rSUIIIIIIII a castigat %c\r", castigat);
-	__POINTW1FN _0x0,0
-	ST   -Y,R31
-	ST   -Y,R30
-	MOV  R30,R11
-	CLR  R31
-	CLR  R22
-	CLR  R23
-	CALL __PUTPARD1
-	LDI  R24,4
-	CALL _printf
-	ADIW R28,6
-; 0000 00DD     }
-; 0000 00DE     else if(remiza == 0){
-	RJMP _0x3B
-_0x38:
-	TST  R8
-	BRNE _0x3C
-; 0000 00DF         castigat = 1;
-	LDI  R30,LOW(1)
-	MOV  R11,R30
-; 0000 00E0         printf("Mi se face rau");
-	__POINTW1FN _0x0,27
-	ST   -Y,R31
-	ST   -Y,R30
-	LDI  R24,0
-	CALL _printf
-	ADIW R28,2
-; 0000 00E1     }
-; 0000 00E2 
-; 0000 00E3 
-; 0000 00E4 }
-_0x3C:
-_0x3B:
-_0x20A0001:
-	LD   R17,Y+
-	RET
-; .FEND
-;
-;void PrinteazaJoc(){
-; 0000 00E6 void PrinteazaJoc(){
-_PrinteazaJoc:
-; .FSTART _PrinteazaJoc
-; 0000 00E7     unsigned char i = 0, j=0;
-; 0000 00E8     for(i=0;i<3;i++){
-	ST   -Y,R17
-	ST   -Y,R16
-;	i -> R17
-;	j -> R16
-	LDI  R17,0
-	LDI  R16,0
-	LDI  R17,LOW(0)
-_0x3E:
-	CPI  R17,3
-	BRSH _0x3F
-; 0000 00E9         for(j=0;j<3;j++){
-	LDI  R16,LOW(0)
-_0x41:
-	CPI  R16,3
-	BRSH _0x42
-; 0000 00EA             putchar(displayJoc[i*3U+j]);
-	LDI  R30,LOW(3)
-	MUL  R30,R17
-	MOVW R30,R0
-	MOVW R26,R30
-	MOV  R30,R16
-	LDI  R31,0
-	ADD  R30,R26
-	ADC  R31,R27
-	SUBI R30,LOW(-_displayJoc)
-	SBCI R31,HIGH(-_displayJoc)
-	LD   R26,Z
-	RCALL _putchar
-; 0000 00EB         }
-	SUBI R16,-1
-	RJMP _0x41
-_0x42:
-; 0000 00EC         putchar('\r');
-	LDI  R26,LOW(13)
-	RCALL _putchar
-; 0000 00ED     }
-	SUBI R17,-1
-	RJMP _0x3E
-_0x3F:
-; 0000 00EE     putchar('\r');
-	LDI  R26,LOW(13)
-	RCALL _putchar
-; 0000 00EF }
-	LD   R16,Y+
-	LD   R17,Y+
-	RET
-; .FEND
+;extern unsigned char castigat, remiza;
 ;
 ;void main (void)
-; 0000 00F2 {
+; 0000 00AA {
 _main:
 ; .FSTART _main
-; 0000 00F3 unsigned short butoane;
-; 0000 00F4 	Init_initController();  // this must be the first "init" action/call!
+; 0000 00AB unsigned short butoane;
+; 0000 00AC unsigned char temp;
+; 0000 00AD 	Init_initController();  // this must be the first "init" action/call!
 ;	butoane -> R16,R17
+;	temp -> R19
 	RCALL _Init_initController
-; 0000 00F5 	#asm("sei")             // enable interrupts
+; 0000 00AE 	#asm("sei")             // enable interrupts
 	sei
-; 0000 00F6 	//LED1 = 1;           	// initial state, will be changed by timer 1
-; 0000 00F7     //putchar(AdresaNebuna);
-; 0000 00F8     DDRC &= (1<<0) | (1<<1);
-	IN   R30,0x7
-	ANDI R30,LOW(0x3)
-	OUT  0x7,R30
-; 0000 00F9     PORTC=(1<<0) | (1<<1);
-	LDI  R30,LOW(3)
-	OUT  0x8,R30
-; 0000 00FA     //TWBR = (1<<6) & (1<<3);
-; 0000 00FB     //TWCR = (1<<TWIE);
-; 0000 00FC     //i2c_init();
-; 0000 00FD     /*lcd(0x27,20,4);
-; 0000 00FE     init();
-; 0000 00FF     // Print a message to the LCD.
-; 0000 0100     backlight();
-; 0000 0101     setCursor(3,0);
-; 0000 0102     //print("Hello, world!");
-; 0000 0103     setCursor(2,1);
-; 0000 0104     //print("Ywrobot Arduino!");
-; 0000 0105     setCursor(0,2);
-; 0000 0106     //print("Arduino LCM IIC 2004");
-; 0000 0107     setCursor(2,3);
-; 0000 0108     //print("Power By Ec-yuan!");*/
-; 0000 0109     PrinteazaJoc();
-	RCALL _PrinteazaJoc
-; 0000 010A 	while(TRUE)
-_0x43:
-; 0000 010B 	{
-; 0000 010C         unsigned char temp;
-; 0000 010D         if(rx_counter0)     // if a character is available on serial port USART0
-	SBIW R28,1
-;	temp -> Y+0
-	TST  R5
-	BREQ _0x46
-; 0000 010E 		{
-; 0000 010F 			temp = getchar();
-	RCALL _getchar
-	ST   Y,R30
-; 0000 0110             //command(temp);
-; 0000 0111             //putchar(temp);
-; 0000 0112 		}
-; 0000 0113         butoane = ButoaneUpdate();
-_0x46:
+; 0000 00AF     i2c_init();
+	CALL _i2c_init
+; 0000 00B0     InitDisplay();
+	CALL _InitDisplay
+; 0000 00B1     RotescLiterele();
+	CALL _RotescLiterele
+; 0000 00B2     DisplayClear();
+	CALL _DisplayClear
+; 0000 00B3     PrinteazaJocDisplay();
+	CALL _PrinteazaJocDisplay
+; 0000 00B4 	while(TRUE)
+_0x16:
+; 0000 00B5 	{
+; 0000 00B6        /* if(rx_counter0)     // if a character is available on serial port USART0
+; 0000 00B7 		{
+; 0000 00B8 			temp = getchar();
+; 0000 00B9             PrintCaracterDisplay(temp);
+; 0000 00BA 		}*/
+; 0000 00BB         butoane = ButoaneUpdate();
 	CALL _ButoaneUpdate
 	MOVW R16,R30
-; 0000 0114         if(butoane && !castigat){
+; 0000 00BC         if(butoane && !castigat){
 	MOV  R0,R16
 	OR   R0,R17
-	BREQ _0x48
-	TST  R11
-	BREQ _0x49
-_0x48:
-	RJMP _0x47
-_0x49:
-; 0000 0115             //TrimiteButoane(butoane);
-; 0000 0116             //update joc
-; 0000 0117             UpdateJoc(butoane);
+	BREQ _0x1A
+	LDS  R30,_castigat
+	CPI  R30,0
+	BREQ _0x1B
+_0x1A:
+	RJMP _0x19
+_0x1B:
+; 0000 00BD             //TrimiteButoane(butoane);
+; 0000 00BE             UpdateJoc(butoane);
 	MOVW R26,R16
-	RCALL _UpdateJoc
-; 0000 0118             PrinteazaJoc();
-	RCALL _PrinteazaJoc
-; 0000 0119             VerificaInvingatorul();
-	RCALL _VerificaInvingatorul
-; 0000 011A         }
-; 0000 011B 
-; 0000 011C     }
-_0x47:
-	ADIW R28,1
-	RJMP _0x43
-; 0000 011D 
-; 0000 011E 
-; 0000 011F }// end main loop
-_0x4A:
-	RJMP _0x4A
+	CALL _UpdateJoc
+; 0000 00BF             PrinteazaJocDisplay();
+	CALL _PrinteazaJocDisplay
+; 0000 00C0             VerificaInvingatorul();
+	CALL _VerificaInvingatorul
+; 0000 00C1         }
+; 0000 00C2         else if(castigat){
+	RJMP _0x1C
+_0x19:
+	LDS  R30,_castigat
+	CPI  R30,0
+	BREQ _0x1D
+; 0000 00C3             LED1 = 1;
+	SBI  0xB,6
+; 0000 00C4             PrintCaracterDisplay('W');
+	LDI  R26,LOW(87)
+	CALL _PrintCaracterDisplay
+; 0000 00C5             PrintCaracterDisplay('I');
+	LDI  R26,LOW(73)
+	CALL _PrintCaracterDisplay
+; 0000 00C6             PrintCaracterDisplay('N');
+	LDI  R26,LOW(78)
+	CALL _PrintCaracterDisplay
+; 0000 00C7             PrintCaracterDisplay(' ');
+	LDI  R26,LOW(32)
+	CALL _PrintCaracterDisplay
+; 0000 00C8             PrintCaracterDisplay(castigat);
+	LDS  R26,_castigat
+	CALL _PrintCaracterDisplay
+; 0000 00C9             while(1);
+_0x20:
+	RJMP _0x20
+; 0000 00CA         }
+; 0000 00CB         else if (remiza == 0){
+_0x1D:
+	LDS  R30,_remiza
+	CPI  R30,0
+	BRNE _0x24
+; 0000 00CC             LED1 = 1;
+	SBI  0xB,6
+; 0000 00CD             PrintCaracterDisplay('D');
+	LDI  R26,LOW(68)
+	CALL _PrintCaracterDisplay
+; 0000 00CE             PrintCaracterDisplay('R');
+	LDI  R26,LOW(82)
+	CALL _PrintCaracterDisplay
+; 0000 00CF             PrintCaracterDisplay('A');
+	LDI  R26,LOW(65)
+	CALL _PrintCaracterDisplay
+; 0000 00D0             PrintCaracterDisplay('W');
+	LDI  R26,LOW(87)
+	CALL _PrintCaracterDisplay
+; 0000 00D1             while(1);
+_0x27:
+	RJMP _0x27
+; 0000 00D2         }
+; 0000 00D3     }
+_0x24:
+_0x1C:
+	RJMP _0x16
+; 0000 00D4 }// end main loop
+_0x2A:
+	RJMP _0x2A
 ; .FEND
 ;
 ;
@@ -2184,11 +1869,9 @@ _Init_initController:
 ; 0001 0067 // Timer/Counter 0,1,2 Interrupt(s) initialization
 ; 0001 0068 TIMSK0=0x00;
 	STS  110,R30
-; 0001 0069 TIMSK1=0x02;
-	LDI  R30,LOW(2)
+; 0001 0069 TIMSK1=0x00;
 	STS  111,R30
 ; 0001 006A TIMSK2=0x00;
-	LDI  R30,LOW(0)
 	STS  112,R30
 ; 0001 006B 
 ; 0001 006C // USART0 initialization
@@ -2269,18 +1952,92 @@ _Init_initController:
 	#endif
 ;#include <delay.h>
 ;#include <stdio.h>
+;#include <i2c.h>
+;unsigned char displayJoc[9] = {'.', '.', '.','.', '.', '.','.', '.', '.'};
+
+	.DSEG
+;unsigned char caracterUrmator = 'X', remiza = 9, castigat = 0;
+;#define AdresaDisplayMic 0x3C
+;
+;unsigned char font8x8_basic[65][8] = {
+;    { 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00},   // U+0020 (space)
+;    { 0x18, 0x3C, 0x3C, 0x18, 0x18, 0x00, 0x18, 0x00},   // U+0021 (!)
+;    { 0x36, 0x36, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00},   // U+0022 (")
+;    { 0x36, 0x36, 0x7F, 0x36, 0x7F, 0x36, 0x36, 0x00},   // U+0023 (#)
+;    { 0x0C, 0x3E, 0x03, 0x1E, 0x30, 0x1F, 0x0C, 0x00},   // U+0024 ($)
+;    { 0x00, 0x63, 0x33, 0x18, 0x0C, 0x66, 0x63, 0x00},   // U+0025 (%)
+;    { 0x1C, 0x36, 0x1C, 0x6E, 0x3B, 0x33, 0x6E, 0x00},   // U+0026 (&)
+;    { 0x06, 0x06, 0x03, 0x00, 0x00, 0x00, 0x00, 0x00},   // U+0027 (')
+;    { 0x18, 0x0C, 0x06, 0x06, 0x06, 0x0C, 0x18, 0x00},   // U+0028 (()
+;    { 0x06, 0x0C, 0x18, 0x18, 0x18, 0x0C, 0x06, 0x00},   // U+0029 ())
+;    { 0x00, 0x66, 0x3C, 0xFF, 0x3C, 0x66, 0x00, 0x00},   // U+002A (*)
+;    { 0x00, 0x0C, 0x0C, 0x3F, 0x0C, 0x0C, 0x00, 0x00},   // U+002B (+)
+;    { 0x00, 0x00, 0x00, 0x00, 0x00, 0x0C, 0x0C, 0x06},   // U+002C (,)
+;    { 0x00, 0x00, 0x00, 0x3F, 0x00, 0x00, 0x00, 0x00},   // U+002D (-)
+;    { 0x00, 0x00, 0x00, 0x00, 0x00, 0x0C, 0x0C, 0x00},   // U+002E (.)
+;    { 0x60, 0x30, 0x18, 0x0C, 0x06, 0x03, 0x01, 0x00},   // U+002F (/)
+;    { 0x3E, 0x63, 0x73, 0x7B, 0x6F, 0x67, 0x3E, 0x00},   // U+0030 (0)
+;    { 0x0C, 0x0E, 0x0C, 0x0C, 0x0C, 0x0C, 0x3F, 0x00},   // U+0031 (1)
+;    { 0x1E, 0x33, 0x30, 0x1C, 0x06, 0x33, 0x3F, 0x00},   // U+0032 (2)
+;    { 0x1E, 0x33, 0x30, 0x1C, 0x30, 0x33, 0x1E, 0x00},   // U+0033 (3)
+;    { 0x38, 0x3C, 0x36, 0x33, 0x7F, 0x30, 0x78, 0x00},   // U+0034 (4)
+;    { 0x3F, 0x03, 0x1F, 0x30, 0x30, 0x33, 0x1E, 0x00},   // U+0035 (5)
+;    { 0x1C, 0x06, 0x03, 0x1F, 0x33, 0x33, 0x1E, 0x00},   // U+0036 (6)
+;    { 0x3F, 0x33, 0x30, 0x18, 0x0C, 0x0C, 0x0C, 0x00},   // U+0037 (7)
+;    { 0x1E, 0x33, 0x33, 0x1E, 0x33, 0x33, 0x1E, 0x00},   // U+0038 (8)
+;    { 0x1E, 0x33, 0x33, 0x3E, 0x30, 0x18, 0x0E, 0x00},   // U+0039 (9)
+;    { 0x00, 0x0C, 0x0C, 0x00, 0x00, 0x0C, 0x0C, 0x00},   // U+003A (:)
+;    { 0x00, 0x0C, 0x0C, 0x00, 0x00, 0x0C, 0x0C, 0x06},   // U+003B (;)
+;    { 0x18, 0x0C, 0x06, 0x03, 0x06, 0x0C, 0x18, 0x00},   // U+003C (<)
+;    { 0x00, 0x00, 0x3F, 0x00, 0x00, 0x3F, 0x00, 0x00},   // U+003D (=)
+;    { 0x06, 0x0C, 0x18, 0x30, 0x18, 0x0C, 0x06, 0x00},   // U+003E (>)
+;    { 0x1E, 0x33, 0x30, 0x18, 0x0C, 0x00, 0x0C, 0x00},   // U+003F (?)
+;    { 0x3E, 0x63, 0x7B, 0x7B, 0x7B, 0x03, 0x1E, 0x00},   // U+0040 (@)
+;    { 0x0C, 0x1E, 0x33, 0x33, 0x3F, 0x33, 0x33, 0x00},   // U+0041 (A)
+;    { 0x3F, 0x66, 0x66, 0x3E, 0x66, 0x66, 0x3F, 0x00},   // U+0042 (B)
+;    { 0x3C, 0x66, 0x03, 0x03, 0x03, 0x66, 0x3C, 0x00},   // U+0043 (C)
+;    { 0x1F, 0x36, 0x66, 0x66, 0x66, 0x36, 0x1F, 0x00},   // U+0044 (D)
+;    { 0x7F, 0x46, 0x16, 0x1E, 0x16, 0x46, 0x7F, 0x00},   // U+0045 (E)
+;    { 0x7F, 0x46, 0x16, 0x1E, 0x16, 0x06, 0x0F, 0x00},   // U+0046 (F)
+;    { 0x3C, 0x66, 0x03, 0x03, 0x73, 0x66, 0x7C, 0x00},   // U+0047 (G)
+;    { 0x33, 0x33, 0x33, 0x3F, 0x33, 0x33, 0x33, 0x00},   // U+0048 (H)
+;    { 0x1E, 0x0C, 0x0C, 0x0C, 0x0C, 0x0C, 0x1E, 0x00},   // U+0049 (I)
+;    { 0x78, 0x30, 0x30, 0x30, 0x33, 0x33, 0x1E, 0x00},   // U+004A (J)
+;    { 0x67, 0x66, 0x36, 0x1E, 0x36, 0x66, 0x67, 0x00},   // U+004B (K)
+;    { 0x0F, 0x06, 0x06, 0x06, 0x46, 0x66, 0x7F, 0x00},   // U+004C (L)
+;    { 0x63, 0x77, 0x7F, 0x7F, 0x6B, 0x63, 0x63, 0x00},   // U+004D (M)
+;    { 0x63, 0x67, 0x6F, 0x7B, 0x73, 0x63, 0x63, 0x00},   // U+004E (N)
+;    { 0x1C, 0x36, 0x63, 0x63, 0x63, 0x36, 0x1C, 0x00},   // U+004F (O)
+;    { 0x3F, 0x66, 0x66, 0x3E, 0x06, 0x06, 0x0F, 0x00},   // U+0050 (P)
+;    { 0x1E, 0x33, 0x33, 0x33, 0x3B, 0x1E, 0x38, 0x00},   // U+0051 (Q)
+;    { 0x3F, 0x66, 0x66, 0x3E, 0x36, 0x66, 0x67, 0x00},   // U+0052 (R)
+;    { 0x1E, 0x33, 0x07, 0x0E, 0x38, 0x33, 0x1E, 0x00},   // U+0053 (S)
+;    { 0x3F, 0x2D, 0x0C, 0x0C, 0x0C, 0x0C, 0x1E, 0x00},   // U+0054 (T)
+;    { 0x33, 0x33, 0x33, 0x33, 0x33, 0x33, 0x3F, 0x00},   // U+0055 (U)
+;    { 0x33, 0x33, 0x33, 0x33, 0x33, 0x1E, 0x0C, 0x00},   // U+0056 (V)
+;    { 0x63, 0x63, 0x63, 0x6B, 0x7F, 0x77, 0x63, 0x00},   // U+0057 (W)
+;    { 0x63, 0x63, 0x36, 0x1C, 0x1C, 0x36, 0x63, 0x00},   // U+0058 (X)
+;    { 0x33, 0x33, 0x33, 0x1E, 0x0C, 0x0C, 0x1E, 0x00},   // U+0059 (Y)
+;    { 0x7F, 0x63, 0x31, 0x18, 0x4C, 0x66, 0x7F, 0x00},   // U+005A (Z)
+;    { 0x1E, 0x06, 0x06, 0x06, 0x06, 0x06, 0x1E, 0x00},   // U+005B ([)
+;    { 0x03, 0x06, 0x0C, 0x18, 0x30, 0x60, 0x40, 0x00},   // U+005C (\)
+;    { 0x1E, 0x18, 0x18, 0x18, 0x18, 0x18, 0x1E, 0x00},   // U+005D (])
+;    { 0x08, 0x1C, 0x36, 0x63, 0x00, 0x00, 0x00, 0x00},   // U+005E (^)
+;    { 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0xFF},   // U+005F (_)
+;    { 0x0C, 0x0C, 0x18, 0x00, 0x00, 0x00, 0x00, 0x00}   // U+0060 (`)
+;};
 ;
 ;unsigned short ButoaneUpdate(){
-; 0002 0006 unsigned short ButoaneUpdate(){
+; 0002 004E unsigned short ButoaneUpdate(){
 
 	.CSEG
 _ButoaneUpdate:
 ; .FSTART _ButoaneUpdate
-; 0002 0007     static unsigned short StareButoaneInainte = 0x00;
-; 0002 0008     volatile unsigned short StareButoane = 0x00, ButoaneApasate = 0x00, i;
-; 0002 0009     volatile unsigned char aux;
-; 0002 000A 
-; 0002 000B     PORTA = (1<<PINA4);// & 0xF0;
+; 0002 004F     static unsigned short StareButoaneInainte = 0x00;    //16 biti
+; 0002 0050     volatile unsigned short StareButoane = 0x00, ButoaneApasate = 0x00, i; //16 biti
+; 0002 0051     volatile unsigned char aux; //8 biti, folosesc 4
+; 0002 0052 
+; 0002 0053     PORTA = (1<<PINA4);// pornesc pullup pe pinul a4
 	SBIW R28,7
 	LDI  R30,LOW(0)
 	STD  Y+3,R30
@@ -2292,1028 +2049,865 @@ _ButoaneUpdate:
 ;	i -> Y+1
 ;	aux -> Y+0
 	LDI  R30,LOW(16)
-	CALL SUBOPT_0x2
-; 0002 000C     DDRA = 0xFF;
-; 0002 000D     delay_us(1);
-; 0002 000E     DDRA = (1<<PINA4);
+	CALL SUBOPT_0x0
+; 0002 0054     DDRA = 0xFF;   //fac tot portul a sa fie sink pentru a scoate pinii din high-impedance si a ii aduce intr-o stare de ...
+; 0002 0055     delay_us(1);
+; 0002 0056     DDRA = (1<<PINA4);  //fac pinul a4 de iesire pentru a alimenta butoanele
 	LDI  R30,LOW(16)
-	CALL SUBOPT_0x3
-; 0002 000F     for(i=0; i<10;i++){
-_0x40004:
-	LDD  R26,Y+1
-	LDD  R27,Y+1+1
-	SBIW R26,10
-	BRSH _0x40005
-; 0002 0010         aux = PINA;
-	IN   R30,0x0
-	ST   Y,R30
-; 0002 0011     }
-	CALL SUBOPT_0x4
-	RJMP _0x40004
-_0x40005:
-; 0002 0012     StareButoane |= (unsigned short)(aux & ((1<<PINA0) | (1<<PINA1) | (1<< PINA2) | (1<<PINA3)));
-	LD   R30,Y
-	ANDI R30,LOW(0xF)
-	LDI  R31,0
-	CALL SUBOPT_0x5
-; 0002 0013 
-; 0002 0014     PORTA = (1<<PINA5);// & 0xF0;
-	LDI  R30,LOW(32)
-	CALL SUBOPT_0x2
-; 0002 0015     DDRA = 0xFF;
-; 0002 0016     delay_us(1);
-; 0002 0017     DDRA = (1<<PINA5);
-	LDI  R30,LOW(32)
-	CALL SUBOPT_0x3
-; 0002 0018     for(i=0; i<10;i++){
+	CALL SUBOPT_0x1
+; 0002 0057     for(i=0; i<10;i++){
 _0x40007:
 	LDD  R26,Y+1
 	LDD  R27,Y+1+1
 	SBIW R26,10
 	BRSH _0x40008
-; 0002 0019         aux = PINA;
+; 0002 0058         aux = PINA;      //citesc pinul de mai multe ori pentru a face debounce
 	IN   R30,0x0
 	ST   Y,R30
-; 0002 001A     }
-	CALL SUBOPT_0x4
+; 0002 0059     }
+	CALL SUBOPT_0x2
 	RJMP _0x40007
 _0x40008:
-; 0002 001B     StareButoane |= (unsigned short)(aux & ((1<<PINA0) | (1<<PINA1) | (1<< PINA2) | (1<<PINA3))) << 4;
+; 0002 005A     StareButoane |= (unsigned short)(aux & ((1<<PINA0) | (1<<PINA1) | (1<< PINA2) | (1<<PINA3)));//citesc cei 4 pini de  ...
 	LD   R30,Y
 	ANDI R30,LOW(0xF)
 	LDI  R31,0
-	CALL __LSLW4
-	CALL SUBOPT_0x5
-; 0002 001C 
-; 0002 001D     PORTA = (1<<PINA6);// & 0xF0;
-	LDI  R30,LOW(64)
-	CALL SUBOPT_0x2
-; 0002 001E     DDRA = 0xFF;
-; 0002 001F     delay_us(1);
-; 0002 0020     DDRA = (1<<PINA6);
-	LDI  R30,LOW(64)
 	CALL SUBOPT_0x3
-; 0002 0021     for(i=0; i<10;i++){
+; 0002 005B 
+; 0002 005C     PORTA = (1<<PINA5);// pornesc pullup pe pinul a5
+	LDI  R30,LOW(32)
+	CALL SUBOPT_0x0
+; 0002 005D     DDRA = 0xFF;   //fac tot portul a sa fie sink pentru a scoate pinii din high-impedance si a ii aduce intr-o stare de ...
+; 0002 005E     delay_us(1);
+; 0002 005F     DDRA = (1<<PINA5);   //fac pinul a5 de iesire pentru a alimenta butoanele
+	LDI  R30,LOW(32)
+	CALL SUBOPT_0x1
+; 0002 0060     for(i=0; i<10;i++){
 _0x4000A:
 	LDD  R26,Y+1
 	LDD  R27,Y+1+1
 	SBIW R26,10
 	BRSH _0x4000B
-; 0002 0022         aux = PINA;
+; 0002 0061         aux = PINA;
 	IN   R30,0x0
 	ST   Y,R30
-; 0002 0023     }
-	CALL SUBOPT_0x4
+; 0002 0062     }
+	CALL SUBOPT_0x2
 	RJMP _0x4000A
 _0x4000B:
-; 0002 0024     StareButoane |= (unsigned short)(aux & ((1<<PINA0) | (1<<PINA1) | (1<< PINA2) | (1<<PINA3))) << 8;
+; 0002 0063     StareButoane |= (unsigned short)(aux & ((1<<PINA0) | (1<<PINA1) | (1<< PINA2) | (1<<PINA3))) << 4;//citesc cei 4 pin ...
 	LD   R30,Y
 	ANDI R30,LOW(0xF)
-	MOV  R31,R30
-	LDI  R30,0
-	CALL SUBOPT_0x5
-; 0002 0025 
-; 0002 0026     PORTA = (1<<PINA7);// & 0xF0;
-	LDI  R30,LOW(128)
-	CALL SUBOPT_0x2
-; 0002 0027     DDRA = 0xFF;
-; 0002 0028     delay_us(1);
-; 0002 0029     DDRA = (1<<PINA7);
-	LDI  R30,LOW(128)
+	LDI  R31,0
+	CALL __LSLW4
 	CALL SUBOPT_0x3
-; 0002 002A     for(i=0; i<10;i++){
+; 0002 0064 
+; 0002 0065     PORTA = (1<<PINA6);// pornesc pullup pe pinul a6
+	LDI  R30,LOW(64)
+	CALL SUBOPT_0x0
+; 0002 0066     DDRA = 0xFF;   //fac tot portul a sa fie sink pentru a scoate pinii din high-impedance si a ii aduce intr-o stare de ...
+; 0002 0067     delay_us(1);
+; 0002 0068     DDRA = (1<<PINA6);    //fac pinul a6 de iesire pentru a alimenta butoanele
+	LDI  R30,LOW(64)
+	CALL SUBOPT_0x1
+; 0002 0069     for(i=0; i<10;i++){
 _0x4000D:
 	LDD  R26,Y+1
 	LDD  R27,Y+1+1
 	SBIW R26,10
 	BRSH _0x4000E
-; 0002 002B         aux = PINA;
+; 0002 006A         aux = PINA;      //citesc pinul de mai multe ori pentru a face debounce
 	IN   R30,0x0
 	ST   Y,R30
-; 0002 002C     }
-	CALL SUBOPT_0x4
+; 0002 006B     }
+	CALL SUBOPT_0x2
 	RJMP _0x4000D
 _0x4000E:
-; 0002 002D     PORTA = 0;
+; 0002 006C     StareButoane |= (unsigned short)(aux & ((1<<PINA0) | (1<<PINA1) | (1<< PINA2) | (1<<PINA3))) << 8; //citesc cei 4 pi ...
+	LD   R30,Y
+	ANDI R30,LOW(0xF)
+	MOV  R31,R30
+	LDI  R30,0
+	CALL SUBOPT_0x3
+; 0002 006D 
+; 0002 006E     PORTA = (1<<PINA7);// pornesc pullup pe pinul a7
+	LDI  R30,LOW(128)
+	CALL SUBOPT_0x0
+; 0002 006F     DDRA = 0xFF;   //fac tot portul a sa fie sink pentru a scoate pinii din high-impedance si a ii aduce intr-o stare de ...
+; 0002 0070     delay_us(1);
+; 0002 0071     DDRA = (1<<PINA7);  //fac pinul a7 de iesire pentru a alimenta butoanele
+	LDI  R30,LOW(128)
+	CALL SUBOPT_0x1
+; 0002 0072     for(i=0; i<10;i++){
+_0x40010:
+	LDD  R26,Y+1
+	LDD  R27,Y+1+1
+	SBIW R26,10
+	BRSH _0x40011
+; 0002 0073         aux = PINA;      //citesc pinul de mai multe ori pentru a face debounce
+	IN   R30,0x0
+	ST   Y,R30
+; 0002 0074     }
+	CALL SUBOPT_0x2
+	RJMP _0x40010
+_0x40011:
+; 0002 0075     PORTA = 0;
 	LDI  R30,LOW(0)
 	OUT  0x2,R30
-; 0002 002E     StareButoane |= (unsigned short)(aux & ((1<<PINA0) | (1<<PINA1) | (1<< PINA2) | (1<<PINA3))) << 12;
+; 0002 0076     //dupa asta am starea curenta a butoanelor (apasate/neapasate)
+; 0002 0077     StareButoane |= (unsigned short)(aux & ((1<<PINA0) | (1<<PINA1) | (1<< PINA2) | (1<<PINA3))) << 12;  //citesc cei 4  ...
 	LD   R30,Y
 	ANDI R30,LOW(0xF)
 	LDI  R31,0
 	CALL __LSLW4
 	MOV  R31,R30
 	LDI  R30,0
-	CALL SUBOPT_0x5
-; 0002 002F 
-; 0002 0030     for(i=0;i<16;i++){
+	CALL SUBOPT_0x3
+; 0002 0078 
+; 0002 0079     for(i=0;i<16;i++){//pentru a nu primi input incontinuu, salvam doar trecerea din 0 in 1 a pinilor
 	LDI  R30,LOW(0)
 	STD  Y+1,R30
 	STD  Y+1+1,R30
-_0x40010:
+_0x40013:
 	LDD  R26,Y+1
 	LDD  R27,Y+1+1
 	SBIW R26,16
-	BRSH _0x40011
-; 0002 0031         if(((StareButoaneInainte & ((unsigned short)1<<i)) == 0) && ((StareButoane & ((unsigned short)1<<i)) != 0)){
-	LDD  R30,Y+1
-	CALL SUBOPT_0x0
+	BRSH _0x40014
+; 0002 007A         if(((StareButoaneInainte & ((unsigned short)1<<i)) == 0) && ((StareButoane & ((unsigned short)1<<i)) != 0)){//da ...
+	CALL SUBOPT_0x4
 	LDS  R26,_StareButoaneInainte_S0020000000
 	LDS  R27,_StareButoaneInainte_S0020000000+1
 	AND  R30,R26
 	AND  R31,R27
 	SBIW R30,0
-	BRNE _0x40013
-	LDD  R30,Y+1
-	CALL SUBOPT_0x0
+	BRNE _0x40016
+	CALL SUBOPT_0x4
 	LDD  R26,Y+5
 	LDD  R27,Y+5+1
 	AND  R30,R26
 	AND  R31,R27
 	SBIW R30,0
-	BRNE _0x40014
-_0x40013:
-	RJMP _0x40012
-_0x40014:
-; 0002 0032             ButoaneApasate |= ((unsigned short)1<<i);
-	LDD  R30,Y+1
-	CALL SUBOPT_0x0
+	BRNE _0x40017
+_0x40016:
+	RJMP _0x40015
+_0x40017:
+; 0002 007B             ButoaneApasate |= ((unsigned short)1<<i);//salvez apasarea o singura data
+	CALL SUBOPT_0x4
 	LDD  R26,Y+3
 	LDD  R27,Y+3+1
 	OR   R30,R26
 	OR   R31,R27
 	STD  Y+3,R30
 	STD  Y+3+1,R31
-; 0002 0033         }
-; 0002 0034     }
-_0x40012:
-	CALL SUBOPT_0x4
-	RJMP _0x40010
-_0x40011:
-; 0002 0035     StareButoaneInainte = StareButoane;
+; 0002 007C         }
+; 0002 007D     }
+_0x40015:
+	CALL SUBOPT_0x2
+	RJMP _0x40013
+_0x40014:
+; 0002 007E     StareButoaneInainte = StareButoane;   //memorez noua stare a pinilor
 	LDD  R30,Y+5
 	LDD  R31,Y+5+1
 	STS  _StareButoaneInainte_S0020000000,R30
 	STS  _StareButoaneInainte_S0020000000+1,R31
-; 0002 0036     return ButoaneApasate;
+; 0002 007F     return ButoaneApasate;               //intorc apasarea o singura data
 	LDD  R30,Y+3
 	LDD  R31,Y+3+1
 	ADIW R28,7
 	RET
-; 0002 0037 }
+; 0002 0080 }
 ; .FEND
 ;
 ;void TrimiteButoane(unsigned short Butoane){
-; 0002 0039 void TrimiteButoane(unsigned short Butoane){
-; 0002 003A     unsigned char i, Printez = 0;
-; 0002 003B     for(i = 0; i < 16; i++){
+; 0002 0082 void TrimiteButoane(unsigned short Butoane){
+; 0002 0083     unsigned char i, Printez = 0;
+; 0002 0084     for(i = 0; i < 16; i++){
 ;	Butoane -> Y+2
 ;	i -> R17
 ;	Printez -> R16
-; 0002 003C         if(Butoane % 2 == 1){
-; 0002 003D             putchar(i + 'a');
-; 0002 003E             Printez = 1;
-; 0002 003F         }
-; 0002 0040         Butoane /= 2;
-; 0002 0041     }
-; 0002 0042     if(Printez){
-; 0002 0043         putchar('\r');
-; 0002 0044     }
-; 0002 0045 
-; 0002 0046 }
-;#include "ecran.h"
-;#include <stdio.h>
-	#ifndef __SLEEP_DEFINED__
-	#define __SLEEP_DEFINED__
-	.EQU __se_bit=0x01
-	.EQU __sm_mask=0x0E
-	.EQU __sm_powerdown=0x04
-	.EQU __sm_powersave=0x06
-	.EQU __sm_standby=0x0C
-	.EQU __sm_ext_standby=0x0E
-	.EQU __sm_adc_noise_red=0x02
-	.SET power_ctrl_reg=smcr
-	#endif
-;#include <delay.h>
-;#include <i2c.h>
+; 0002 0085         if(Butoane % 2 == 1){
+; 0002 0086             putchar(i + 'a');//printez butoanele apasate ca litere pe uart
+; 0002 0087             Printez = 1;
+; 0002 0088         }
+; 0002 0089         Butoane /= 2;
+; 0002 008A     }
+; 0002 008B     if(Printez){    //daca a fost printat macar un buton, merg si pe urmatoarea linie
+; 0002 008C         putchar('\r');
+; 0002 008D     }
+; 0002 008E 
+; 0002 008F }
 ;
-;  uint8_t _Addr;
-;  uint8_t _displayfunction;
-;  uint8_t _displaycontrol;
-;  uint8_t _displaymode;
-;  uint8_t _numlines;
-;  uint8_t _cols;
-;  uint8_t _rows;
-;  uint8_t _backlightval;
+;void PrinteazaJoc(){
+; 0002 0091 void PrinteazaJoc(){
+; 0002 0092     unsigned char i = 0, j=0;
+; 0002 0093     for(i=0;i<3;i++){
+;	i -> R17
+;	j -> R16
+; 0002 0094         for(j=0;j<3;j++){
+; 0002 0095             putchar(displayJoc[i*3U+j]);//printez matricea jocului 3x3
+; 0002 0096         }
+; 0002 0097         putchar('\r');
+; 0002 0098     }
+; 0002 0099     putchar('\r');
+; 0002 009A }
 ;
-;  // Based on the work by DFRobot
+;void VerificaInvingatorul(){
+; 0002 009C void VerificaInvingatorul(){
+_VerificaInvingatorul:
+; .FSTART _VerificaInvingatorul
+; 0002 009D     unsigned char i;
+; 0002 009E     for(i=0;i<3;i++){
+	ST   -Y,R17
+;	i -> R17
+	LDI  R17,LOW(0)
+_0x40024:
+	CPI  R17,3
+	BRLO PC+2
+	RJMP _0x40025
+; 0002 009F         //verifica invingatorul pe linii
+; 0002 00A0         if(((displayJoc[i*3U] == displayJoc[i*3U+1U]) &&( displayJoc[i*3U+1U] == displayJoc[i*3U+2U])) && displayJoc[i*3 ...
+	LDI  R30,LOW(3)
+	MUL  R30,R17
+	MOVW R30,R0
+	MOVW R22,R30
+	SUBI R30,LOW(-_displayJoc)
+	SBCI R31,HIGH(-_displayJoc)
+	LD   R26,Z
+	MOVW R30,R0
+	__ADDW1MN _displayJoc,1
+	LD   R30,Z
+	CP   R30,R26
+	BRNE _0x40027
+	MOVW R30,R22
+	__ADDW1MN _displayJoc,1
+	LD   R26,Z
+	MOVW R30,R22
+	__ADDW1MN _displayJoc,2
+	LD   R30,Z
+	CP   R30,R26
+	BREQ _0x40028
+_0x40027:
+	RJMP _0x40029
+_0x40028:
+	MOVW R30,R22
+	CALL SUBOPT_0x5
+	BRNE _0x4002A
+_0x40029:
+	RJMP _0x40026
+_0x4002A:
+; 0002 00A1             castigat = displayJoc[i*3U];
+	LDI  R30,LOW(3)
+	MUL  R30,R17
+	MOVW R30,R0
+	SUBI R30,LOW(-_displayJoc)
+	SBCI R31,HIGH(-_displayJoc)
+	LD   R30,Z
+	STS  _castigat,R30
+; 0002 00A2         }
+; 0002 00A3         //verifica invingatorul pe coloane
+; 0002 00A4         if(((displayJoc[i] == displayJoc[i+3U]) &&( displayJoc[i+3U] == displayJoc[i+6U])) && displayJoc[i] != '.'){
+_0x40026:
+	MOV  R30,R17
+	LDI  R31,0
+	SUBI R30,LOW(-_displayJoc)
+	SBCI R31,HIGH(-_displayJoc)
+	LD   R26,Z
+	MOV  R30,R17
+	LDI  R31,0
+	__ADDW1MN _displayJoc,3
+	LD   R30,Z
+	CP   R30,R26
+	BRNE _0x4002C
+	MOV  R30,R17
+	LDI  R31,0
+	__ADDW1MN _displayJoc,3
+	LD   R26,Z
+	MOV  R30,R17
+	LDI  R31,0
+	__ADDW1MN _displayJoc,6
+	LD   R30,Z
+	CP   R30,R26
+	BREQ _0x4002D
+_0x4002C:
+	RJMP _0x4002E
+_0x4002D:
+	MOV  R30,R17
+	LDI  R31,0
+	CALL SUBOPT_0x5
+	BRNE _0x4002F
+_0x4002E:
+	RJMP _0x4002B
+_0x4002F:
+; 0002 00A5             castigat = displayJoc[i];
+	MOV  R30,R17
+	LDI  R31,0
+	SUBI R30,LOW(-_displayJoc)
+	SBCI R31,HIGH(-_displayJoc)
+	LD   R30,Z
+	STS  _castigat,R30
+; 0002 00A6         }
+; 0002 00A7     }
+_0x4002B:
+	SUBI R17,-1
+	RJMP _0x40024
+_0x40025:
+; 0002 00A8     //verifica invingatorul pe diagonale
+; 0002 00A9     if(((displayJoc[0U] == displayJoc[4U]) &&( displayJoc[4U] == displayJoc[8U])) && displayJoc[0U] != '.'){
+	__GETB1MN _displayJoc,4
+	LDS  R26,_displayJoc
+	CP   R30,R26
+	BRNE _0x40031
+	__GETB2MN _displayJoc,4
+	__GETB1MN _displayJoc,8
+	CP   R30,R26
+	BREQ _0x40032
+_0x40031:
+	RJMP _0x40033
+_0x40032:
+	LDS  R26,_displayJoc
+	CPI  R26,LOW(0x2E)
+	BRNE _0x40034
+_0x40033:
+	RJMP _0x40030
+_0x40034:
+; 0002 00AA             castigat = displayJoc[4U];
+	__GETB1MN _displayJoc,4
+	STS  _castigat,R30
+; 0002 00AB     }
+; 0002 00AC     if(((displayJoc[6U] == displayJoc[4U]) &&( displayJoc[4U] == displayJoc[2U])) && displayJoc[2U] != '.'){
+_0x40030:
+	__GETB2MN _displayJoc,6
+	__GETB1MN _displayJoc,4
+	CP   R30,R26
+	BRNE _0x40036
+	__GETB2MN _displayJoc,4
+	__GETB1MN _displayJoc,2
+	CP   R30,R26
+	BREQ _0x40037
+_0x40036:
+	RJMP _0x40038
+_0x40037:
+	__GETB2MN _displayJoc,2
+	CPI  R26,LOW(0x2E)
+	BRNE _0x40039
+_0x40038:
+	RJMP _0x40035
+_0x40039:
+; 0002 00AD             castigat = displayJoc[4U];
+	__GETB1MN _displayJoc,4
+	STS  _castigat,R30
+; 0002 00AE     }
+; 0002 00AF }
+_0x40035:
+	RJMP _0x20A0001
+; .FEND
 ;
-;#define printIIC(args)    i2c_write(args)//Wire.send(args)
-;void write(uint8_t value) {
-; 0003 0012 void write(uint8_t value) {
-
-	.CSEG
-; 0003 0013     send(value, Rs);
-;	value -> Y+0
-; 0003 0014 }
-;
-;
-;// When the display powers up, it is configured as follows:
-;//
-;// 1. Display clear
-;// 2. Function set:
-;//    DL = 1; 8-bit interface data
-;//    N = 0; 1-line display
-;//    F = 0; 5x8 dot character font
-;// 3. Display on/off control:
-;//    D = 0; Display off
-;//    C = 0; Cursor off
-;//    B = 0; Blinking off
-;// 4. Entry mode set:
-;//    I/D = 1; Increment by 1
-;//    S = 0; No shift
-;//
-;// Note, however, that resetting the Arduino doesn't reset the LCD, so we
-;// can't assume that its in that state when a sketch starts (and the
-;// LiquidCrystal constructor is called).
-;
-;void lcd(uint8_t lcd_Addr,uint8_t lcd_cols,uint8_t lcd_rows)
-; 0003 002B {
-; 0003 002C   _Addr = lcd_Addr;
-;	lcd_Addr -> Y+2
-;	lcd_cols -> Y+1
-;	lcd_rows -> Y+0
-; 0003 002D   _cols = lcd_cols;
-; 0003 002E   _rows = lcd_rows;
-; 0003 002F   _backlightval = LCD_NOBACKLIGHT;
-; 0003 0030 }
-;
-;void init(){
-; 0003 0032 void init(){
-; 0003 0033     init_priv();
-; 0003 0034 }
-;
-;void init_priv()
-; 0003 0037 {
-; 0003 0038     //Wire.begin();
-; 0003 0039     i2c_init();
-; 0003 003A     _displayfunction = LCD_4BITMODE | LCD_1LINE | LCD_5x8DOTS;
-; 0003 003B     begin(_cols, _rows, LCD_5x8DOTS);
-; 0003 003C }
-;
-;void begin(uint8_t cols, uint8_t lines, uint8_t dotsize) {
-; 0003 003E void begin(uint8_t cols, uint8_t lines, uint8_t dotsize) {
-; 0003 003F     if (lines > 1) {
-;	cols -> Y+2
-;	lines -> Y+1
-;	dotsize -> Y+0
-; 0003 0040         _displayfunction |= LCD_2LINE;
-; 0003 0041     }
-; 0003 0042     _numlines = lines;
-; 0003 0043 
-; 0003 0044     // for some 1 line displays you can select a 10 pixel high font
-; 0003 0045     if ((dotsize != 0) && (lines == 1)) {
-; 0003 0046         _displayfunction |= LCD_5x10DOTS;
-; 0003 0047     }
-; 0003 0048 
-; 0003 0049     // SEE PAGE 45/46 FOR INITIALIZATION SPECIFICATION!
-; 0003 004A     // according to datasheet, we need at least 40ms after power rises above 2.7V
-; 0003 004B     // before sending commands. Arduino can turn on way befer 4.5V so we'll wait 50
-; 0003 004C     delay_ms(50);
-; 0003 004D 
-; 0003 004E     // Now we pull both RS and R/W low to begin commands
-; 0003 004F     expanderWrite(_backlightval);    // reset expanderand turn backlight off (Bit 8 =1)
-; 0003 0050     delay_ms(1000);
-; 0003 0051 
-; 0003 0052       //put the LCD into 4 bit mode
-; 0003 0053     // this is according to the hitachi HD44780 datasheet
-; 0003 0054     // figure 24, pg 46
-; 0003 0055 
-; 0003 0056       // we start in 8bit mode, try to set 4 bit mode
-; 0003 0057    write4bits(0x03 << 4);
-; 0003 0058    delay_us(4500); // wait min 4.1ms
-; 0003 0059 
-; 0003 005A    // second try
-; 0003 005B    write4bits(0x03 << 4);
-; 0003 005C    delay_us(4500); // wait min 4.1ms
-; 0003 005D 
-; 0003 005E    // third go!
-; 0003 005F    write4bits(0x03 << 4);
-; 0003 0060    delay_us(150);
-; 0003 0061 
-; 0003 0062    // finally, set to 4-bit interface
-; 0003 0063    write4bits(0x02 << 4);
-; 0003 0064 
-; 0003 0065 
-; 0003 0066     // set # lines, font size, etc.
-; 0003 0067     command(LCD_FUNCTIONSET | _displayfunction);
-; 0003 0068 
-; 0003 0069     // turn the display on with no cursor or blinking default
-; 0003 006A     _displaycontrol = LCD_DISPLAYON | LCD_CURSOROFF | LCD_BLINKOFF;
-; 0003 006B     display();
-; 0003 006C 
-; 0003 006D     // clear it off
-; 0003 006E     clear();
-; 0003 006F 
-; 0003 0070     // Initialize to default text direction (for roman languages)
-; 0003 0071     _displaymode = LCD_ENTRYLEFT | LCD_ENTRYSHIFTDECREMENT;
-; 0003 0072 
-; 0003 0073     // set the entry mode
-; 0003 0074     command(LCD_ENTRYMODESET | _displaymode);
-; 0003 0075 
-; 0003 0076     home();
-; 0003 0077 
-; 0003 0078 }
-;
-;/********** high level commands, for the user! */
-;void clear(){
-; 0003 007B void clear(){
-; 0003 007C     command(LCD_CLEARDISPLAY);// clear display, set cursor position to zero
-; 0003 007D     delay_us(2000);  // this command takes a long time!
-; 0003 007E }
-;
-;void home(){
-; 0003 0080 void home(){
-; 0003 0081     command(LCD_RETURNHOME);  // set cursor position to zero
-; 0003 0082     delay_us(2000);  // this command takes a long time!
-; 0003 0083 }
-;
-;void setCursor(uint8_t col, uint8_t row){
-; 0003 0085 void setCursor(uint8_t col, uint8_t row){
-; 0003 0086     int row_offsets[] = { 0x00, 0x40, 0x14, 0x54 };
-; 0003 0087     if ( row > _numlines ) {
-;	col -> Y+9
-;	row -> Y+8
-;	row_offsets -> Y+0
-; 0003 0088         row = _numlines-1;    // we count rows starting w/0
-; 0003 0089     }
-; 0003 008A     command(LCD_SETDDRAMADDR | (col + row_offsets[row]));
-; 0003 008B }
-;
-;// Turn the display on/off (quickly)
-;void noDisplay() {
-; 0003 008E void noDisplay() {
-; 0003 008F     _displaycontrol &= ~LCD_DISPLAYON;
-; 0003 0090     command(LCD_DISPLAYCONTROL | _displaycontrol);
-; 0003 0091 }
-;void display() {
-; 0003 0092 void display() {
-; 0003 0093     _displaycontrol |= LCD_DISPLAYON;
-; 0003 0094     command(LCD_DISPLAYCONTROL | _displaycontrol);
-; 0003 0095 }
-;
-;// Turns the underline cursor on/off
-;void noCursor() {
-; 0003 0098 void noCursor() {
-; 0003 0099     _displaycontrol &= ~LCD_CURSORON;
-; 0003 009A     command(LCD_DISPLAYCONTROL | _displaycontrol);
-; 0003 009B }
-;void cursor() {
-; 0003 009C void cursor() {
-; 0003 009D     _displaycontrol |= LCD_CURSORON;
-; 0003 009E     command(LCD_DISPLAYCONTROL | _displaycontrol);
-; 0003 009F }
-;
-;// Turn on and off the blinking cursor
-;void noBlink() {
-; 0003 00A2 void noBlink() {
-; 0003 00A3     _displaycontrol &= ~LCD_BLINKON;
-; 0003 00A4     command(LCD_DISPLAYCONTROL | _displaycontrol);
-; 0003 00A5 }
-;void blink() {
-; 0003 00A6 void blink() {
-; 0003 00A7     _displaycontrol |= LCD_BLINKON;
-; 0003 00A8     command(LCD_DISPLAYCONTROL | _displaycontrol);
-; 0003 00A9 }
-;
-;// These commands scroll the display without changing the RAM
-;void scrollDisplayLeft(void) {
-; 0003 00AC void scrollDisplayLeft(void) {
-; 0003 00AD     command(LCD_CURSORSHIFT | LCD_DISPLAYMOVE | LCD_MOVELEFT);
-; 0003 00AE }
-;void scrollDisplayRight(void) {
-; 0003 00AF void scrollDisplayRight(void) {
-; 0003 00B0     command(LCD_CURSORSHIFT | LCD_DISPLAYMOVE | LCD_MOVERIGHT);
-; 0003 00B1 }
-;
-;// This is for text that flows Left to Right
-;void leftToRight(void) {
-; 0003 00B4 void leftToRight(void) {
-; 0003 00B5     _displaymode |= LCD_ENTRYLEFT;
-; 0003 00B6     command(LCD_ENTRYMODESET | _displaymode);
-; 0003 00B7 }
-;
-;// This is for text that flows Right to Left
-;void rightToLeft(void) {
-; 0003 00BA void rightToLeft(void) {
-; 0003 00BB     _displaymode &= ~LCD_ENTRYLEFT;
-; 0003 00BC     command(LCD_ENTRYMODESET | _displaymode);
-; 0003 00BD }
-;
-;// This will 'right justify' text from the cursor
-;void autoscroll(void) {
-; 0003 00C0 void autoscroll(void) {
-; 0003 00C1     _displaymode |= LCD_ENTRYSHIFTINCREMENT;
-; 0003 00C2     command(LCD_ENTRYMODESET | _displaymode);
-; 0003 00C3 }
-;
-;// This will 'left justify' text from the cursor
-;void noAutoscroll(void) {
-; 0003 00C6 void noAutoscroll(void) {
-; 0003 00C7     _displaymode &= ~LCD_ENTRYSHIFTINCREMENT;
-; 0003 00C8     command(LCD_ENTRYMODESET | _displaymode);
-; 0003 00C9 }
-;
-;// Allows us to fill the first 8 CGRAM locations
-;// with custom characters
-;void createChar(uint8_t location, uint8_t charmap[]) {
-; 0003 00CD void createChar(uint8_t location, uint8_t charmap[]) {
-; 0003 00CE     int i;
-; 0003 00CF     location &= 0x7; // we only have 8 locations 0-7
-;	location -> Y+4
-;	charmap -> Y+2
-;	i -> R16,R17
-; 0003 00D0     command(LCD_SETCGRAMADDR | (location << 3));
-; 0003 00D1     for (i=0; i<8; i++) {
-; 0003 00D2         write(charmap[i]);
-; 0003 00D3     }
-; 0003 00D4 }
-;
-;// Turn the (optional) backlight off/on
-;void noBacklight(void) {
-; 0003 00D7 void noBacklight(void) {
-; 0003 00D8     _backlightval=LCD_NOBACKLIGHT;
-; 0003 00D9     expanderWrite(0);
-; 0003 00DA }
-;
-;void backlight(void) {
-; 0003 00DC void backlight(void) {
-; 0003 00DD     _backlightval=LCD_BACKLIGHT;
-; 0003 00DE     expanderWrite(0);
-; 0003 00DF }
-;
-;
-;
-;/*********** mid level commands, for sending data/cmds */
-;void command(uint8_t value) {
-; 0003 00E4 void command(uint8_t value) {
-; 0003 00E5     send(value, 0);
-;	value -> Y+0
-; 0003 00E6 }
-;
-;
-;/************ low level data pushing commands **********/
-;
-;// write either command or data
-;void send(uint8_t value, uint8_t mode) {
-; 0003 00EC void send(uint8_t value, uint8_t mode) {
-; 0003 00ED     uint8_t highnib=value&0xf0;
-; 0003 00EE     uint8_t lownib=(value<<4)&0xf0;
-; 0003 00EF        write4bits((highnib)|mode);
-;	value -> Y+3
-;	mode -> Y+2
-;	highnib -> R17
-;	lownib -> R16
-; 0003 00F0     write4bits((lownib)|mode);
-; 0003 00F1 }
-;
-;void write4bits(uint8_t value) {
-; 0003 00F3 void write4bits(uint8_t value) {
-; 0003 00F4     expanderWrite(value);
-;	value -> Y+0
-; 0003 00F5     pulseEnable(value);
-; 0003 00F6 }
-;
-;void expanderWrite(uint8_t _data){
-; 0003 00F8 void expanderWrite(uint8_t _data){
-; 0003 00F9     //Wire.beginTransmission(_Addr);
-; 0003 00FA     i2c_start();
-;	_data -> Y+0
-; 0003 00FB     i2c_write(_Addr);
-; 0003 00FC     printIIC((int)(_data) | _backlightval);
-; 0003 00FD     //Wire.endTransmission();
-; 0003 00FE     i2c_stop();
-; 0003 00FF }
-;
-;void pulseEnable(uint8_t _data){
-; 0003 0101 void pulseEnable(uint8_t _data){
-; 0003 0102     expanderWrite(_data | En);    // En high
-;	_data -> Y+0
-; 0003 0103     delay_us(1);        // enable pulse must be >450ns
-; 0003 0104 
-; 0003 0105     expanderWrite(_data & ~En);    // En low
-; 0003 0106     delay_us(50);        // commands need > 37us to settle
-; 0003 0107 }
-;
-;
-;// Alias functions
-;
-;void cursor_on(){
-; 0003 010C void cursor_on(){
-; 0003 010D     cursor();
-; 0003 010E }
-;
-;void cursor_off(){
-; 0003 0110 void cursor_off(){
-; 0003 0111     noCursor();
-; 0003 0112 }
-;
-;void blink_on(){
-; 0003 0114 void blink_on(){
-; 0003 0115     blink();
-; 0003 0116 }
-;
-;void blink_off(){
-; 0003 0118 void blink_off(){
-; 0003 0119     noBlink();
-; 0003 011A }
-;
-;void load_custom_character(uint8_t char_num, uint8_t *rows){
-; 0003 011C void load_custom_character(uint8_t char_num, uint8_t *rows){
-; 0003 011D         createChar(char_num, rows);
-;	char_num -> Y+2
-;	*rows -> Y+0
-; 0003 011E }
-;
-;void setBacklight(uint8_t new_val){
-; 0003 0120 void setBacklight(uint8_t new_val){
-; 0003 0121     if(new_val){
-;	new_val -> Y+0
-; 0003 0122         backlight();        // turn backlight on
-; 0003 0123     }else{
-; 0003 0124         noBacklight();        // turn backlight off
-; 0003 0125     }
-; 0003 0126 }
-;
-;/*void printstr(const char c[]){
-;    //This function is not identical to the function used for "real" I2C displays
-;    //it's here so the user sketch doesn't have to be changed
-;    //print(c);
-;} */
-;
-	#ifndef __SLEEP_DEFINED__
-	#define __SLEEP_DEFINED__
-	.EQU __se_bit=0x01
-	.EQU __sm_mask=0x0E
-	.EQU __sm_powerdown=0x04
-	.EQU __sm_powersave=0x06
-	.EQU __sm_standby=0x0C
-	.EQU __sm_ext_standby=0x0E
-	.EQU __sm_adc_noise_red=0x02
-	.SET power_ctrl_reg=smcr
-	#endif
-
-	.CSEG
-_put_usart_G100:
-; .FSTART _put_usart_G100
+;void UpdateJoc(unsigned short butoane){
+; 0002 00B1 void UpdateJoc(unsigned short butoane){
+_UpdateJoc:
+; .FSTART _UpdateJoc
+; 0002 00B2     unsigned char i, j;
+; 0002 00B3     for(i=0;i<3;i++){
 	ST   -Y,R27
 	ST   -Y,R26
+	ST   -Y,R17
+	ST   -Y,R16
+;	butoane -> Y+2
+;	i -> R17
+;	j -> R16
+	LDI  R17,LOW(0)
+_0x4003B:
+	CPI  R17,3
+	BRSH _0x4003C
+; 0002 00B4         for(j=0; j<3;j++){
+	LDI  R16,LOW(0)
+_0x4003E:
+	CPI  R16,3
+	BRSH _0x4003F
+; 0002 00B5             if((butoane & ((unsigned short)1<<(i*4+j))) != 0){ //trec prin fiecare casuta in parte si verific daca buton ...
+	MOV  R30,R17
+	LSL  R30
+	LSL  R30
+	ADD  R30,R16
+	LDI  R26,LOW(1)
+	LDI  R27,HIGH(1)
+	CALL __LSLW12
 	LDD  R26,Y+2
-	CALL _putchar
-	LD   R26,Y
-	LDD  R27,Y+1
-	LD   R30,X+
-	LD   R31,X+
-	ADIW R30,1
-	ST   -X,R31
-	ST   -X,R30
+	LDD  R27,Y+2+1
+	AND  R30,R26
+	AND  R31,R27
+	SBIW R30,0
+	BREQ _0x40040
+; 0002 00B6                 if( displayJoc[j*3U+(2U-i)] == '.'){    //daca nu e niciun semn acolo, pot pune urmatorul caracter
+	CALL SUBOPT_0x6
+	CALL SUBOPT_0x5
+	BRNE _0x40041
+; 0002 00B7                     remiza--;//scad numarul de caractere ramase pana la remiza
+	LDS  R30,_remiza
+	SUBI R30,LOW(1)
+	STS  _remiza,R30
+; 0002 00B8                     displayJoc[j*3U+(2U-i)] = caracterUrmator;//pun in casuta caracterul urmator;
+	CALL SUBOPT_0x6
+	SUBI R30,LOW(-_displayJoc)
+	SBCI R31,HIGH(-_displayJoc)
+	ST   Z,R9
+; 0002 00B9                     if(caracterUrmator == 'X'){//schimb caracterul ce urmeaza
+	LDI  R30,LOW(88)
+	CP   R30,R9
+	BRNE _0x40042
+; 0002 00BA                         caracterUrmator = '0';
+	LDI  R30,LOW(48)
+	RJMP _0x40060
+; 0002 00BB                     }
+; 0002 00BC                     else{
+_0x40042:
+; 0002 00BD                         caracterUrmator = 'X';
+	LDI  R30,LOW(88)
+_0x40060:
+	MOV  R9,R30
+; 0002 00BE                     }
+; 0002 00BF                 }
+; 0002 00C0                 break;
+_0x40041:
+	RJMP _0x4003F
+; 0002 00C1             }
+; 0002 00C2         }
+_0x40040:
+	SUBI R16,-1
+	RJMP _0x4003E
+_0x4003F:
+; 0002 00C3 
+; 0002 00C4     }
+	SUBI R17,-1
+	RJMP _0x4003B
+_0x4003C:
+; 0002 00C5 }
+	LDD  R17,Y+1
+	LDD  R16,Y+0
+	ADIW R28,4
+	RET
+; .FEND
+;
+;void PrintCaracterDisplay(unsigned char caracter){
+; 0002 00C7 void PrintCaracterDisplay(unsigned char caracter){
+_PrintCaracterDisplay:
+; .FSTART _PrintCaracterDisplay
+; 0002 00C8     unsigned char i;
+; 0002 00C9     if(caracter >= 32){
+	ST   -Y,R26
+	ST   -Y,R17
+;	caracter -> Y+1
+;	i -> R17
+	LDD  R26,Y+1
+	CPI  R26,LOW(0x20)
+	BRLO _0x40044
+; 0002 00CA         caracter-=32;
+	LDD  R30,Y+1
+	SUBI R30,LOW(32)
+	STD  Y+1,R30
+; 0002 00CB         i2c_start();
+	CALL SUBOPT_0x7
+; 0002 00CC         i2c_write(AdresaDisplayMic<<1);
+; 0002 00CD         i2c_write(0x40);
+	LDI  R26,LOW(64)
+	CALL _i2c_write
+; 0002 00CE         //construiesc caracterul
+; 0002 00CF         for(i=0;i<8U;i++){
+	LDI  R17,LOW(0)
+_0x40046:
+	MOV  R26,R17
+	CLR  R27
+	SBIW R26,8
+	BRGE _0x40047
+; 0002 00D0             i2c_write(font8x8_basic[caracter][i]);
+	LDD  R30,Y+1
+	CALL SUBOPT_0x8
+	MOVW R26,R30
+	CLR  R30
+	ADD  R26,R17
+	ADC  R27,R30
+	LD   R26,X
+	CALL _i2c_write
+; 0002 00D1         }
+	SUBI R17,-1
+	RJMP _0x40046
+_0x40047:
+; 0002 00D2         i2c_stop();
+	CALL _i2c_stop
+; 0002 00D3     }
+; 0002 00D4 
+; 0002 00D5 }
+_0x40044:
+	LDD  R17,Y+0
+	RJMP _0x20A0002
+; .FEND
+;
+;void Data1Bit(unsigned char data){
+; 0002 00D7 void Data1Bit(unsigned char data){
+; 0002 00D8     i2c_start();
+;	data -> Y+0
+; 0002 00D9     i2c_write(AdresaDisplayMic<<1);
+; 0002 00DA     i2c_write(0xC0);
+; 0002 00DB     i2c_write(data);
+; 0002 00DC     i2c_stop();
+; 0002 00DD }
+;
+;void Comanda1Bit(unsigned char comanda1){
+; 0002 00DF void Comanda1Bit(unsigned char comanda1){
+_Comanda1Bit:
+; .FSTART _Comanda1Bit
+; 0002 00E0     i2c_start();
+	ST   -Y,R26
+;	comanda1 -> Y+0
+	CALL SUBOPT_0x7
+; 0002 00E1     i2c_write(AdresaDisplayMic<<1);
+; 0002 00E2     i2c_write(0x80);
+	LDI  R26,LOW(128)
+	CALL SUBOPT_0x9
+; 0002 00E3     i2c_write(comanda1);
+; 0002 00E4     i2c_stop();
+; 0002 00E5 }
+	ADIW R28,1
+	RET
+; .FEND
+;
+;void Comanda2Biti(unsigned char comanda1, unsigned char comanda2){
+; 0002 00E7 void Comanda2Biti(unsigned char comanda1, unsigned char comanda2){
+_Comanda2Biti:
+; .FSTART _Comanda2Biti
+; 0002 00E8     i2c_start();
+	ST   -Y,R26
+;	comanda1 -> Y+1
+;	comanda2 -> Y+0
+	CALL SUBOPT_0x7
+; 0002 00E9     i2c_write(AdresaDisplayMic<<1);
+; 0002 00EA     i2c_write(0x00);
+	LDI  R26,LOW(0)
+	CALL _i2c_write
+; 0002 00EB     i2c_write(comanda1);
+	LDD  R26,Y+1
+	CALL SUBOPT_0x9
+; 0002 00EC     i2c_write(comanda2);
+; 0002 00ED     i2c_stop();
+; 0002 00EE }
+_0x20A0002:
+	ADIW R28,2
+	RET
+; .FEND
+;
+;void Comanda3Biti(unsigned char comanda1, unsigned char comanda2, unsigned char comanda3){
+; 0002 00F0 void Comanda3Biti(unsigned char comanda1, unsigned char comanda2, unsigned char comanda3){
+_Comanda3Biti:
+; .FSTART _Comanda3Biti
+; 0002 00F1     i2c_start();
+	ST   -Y,R26
+;	comanda1 -> Y+2
+;	comanda2 -> Y+1
+;	comanda3 -> Y+0
+	CALL SUBOPT_0x7
+; 0002 00F2     i2c_write(AdresaDisplayMic<<1);
+; 0002 00F3     i2c_write(0x00);
+	LDI  R26,LOW(0)
+	CALL _i2c_write
+; 0002 00F4     i2c_write(comanda1);
+	LDD  R26,Y+2
+	CALL _i2c_write
+; 0002 00F5     i2c_write(comanda2);
+	LDD  R26,Y+1
+	CALL SUBOPT_0x9
+; 0002 00F6     i2c_write(comanda3);
+; 0002 00F7     i2c_stop();
+; 0002 00F8 }
 	ADIW R28,3
 	RET
 ; .FEND
-__print_G100:
-; .FSTART __print_G100
-	ST   -Y,R27
-	ST   -Y,R26
-	SBIW R28,6
-	CALL __SAVELOCR6
-	LDI  R17,0
-	LDD  R26,Y+12
-	LDD  R27,Y+12+1
-	LDI  R30,LOW(0)
-	LDI  R31,HIGH(0)
-	ST   X+,R30
-	ST   X,R31
-_0x2000016:
-	LDD  R30,Y+18
-	LDD  R31,Y+18+1
-	ADIW R30,1
-	STD  Y+18,R30
-	STD  Y+18+1,R31
-	SBIW R30,1
-	LPM  R30,Z
-	MOV  R18,R30
-	CPI  R30,0
-	BRNE PC+2
-	RJMP _0x2000018
-	MOV  R30,R17
-	CPI  R30,0
-	BRNE _0x200001C
-	CPI  R18,37
-	BRNE _0x200001D
-	LDI  R17,LOW(1)
-	RJMP _0x200001E
-_0x200001D:
-	CALL SUBOPT_0x6
-_0x200001E:
-	RJMP _0x200001B
-_0x200001C:
-	CPI  R30,LOW(0x1)
-	BRNE _0x200001F
-	CPI  R18,37
-	BRNE _0x2000020
-	CALL SUBOPT_0x6
-	RJMP _0x20000CC
-_0x2000020:
-	LDI  R17,LOW(2)
-	LDI  R20,LOW(0)
-	LDI  R16,LOW(0)
-	CPI  R18,45
-	BRNE _0x2000021
-	LDI  R16,LOW(1)
-	RJMP _0x200001B
-_0x2000021:
-	CPI  R18,43
-	BRNE _0x2000022
-	LDI  R20,LOW(43)
-	RJMP _0x200001B
-_0x2000022:
-	CPI  R18,32
-	BRNE _0x2000023
-	LDI  R20,LOW(32)
-	RJMP _0x200001B
-_0x2000023:
-	RJMP _0x2000024
-_0x200001F:
-	CPI  R30,LOW(0x2)
-	BRNE _0x2000025
-_0x2000024:
-	LDI  R21,LOW(0)
-	LDI  R17,LOW(3)
-	CPI  R18,48
-	BRNE _0x2000026
-	ORI  R16,LOW(128)
-	RJMP _0x200001B
-_0x2000026:
-	RJMP _0x2000027
-_0x2000025:
-	CPI  R30,LOW(0x3)
-	BREQ PC+2
-	RJMP _0x200001B
-_0x2000027:
-	CPI  R18,48
-	BRLO _0x200002A
-	CPI  R18,58
-	BRLO _0x200002B
-_0x200002A:
-	RJMP _0x2000029
-_0x200002B:
-	LDI  R26,LOW(10)
-	MUL  R21,R26
-	MOV  R21,R0
-	MOV  R30,R18
-	SUBI R30,LOW(48)
-	ADD  R21,R30
-	RJMP _0x200001B
-_0x2000029:
-	MOV  R30,R18
-	CPI  R30,LOW(0x63)
-	BRNE _0x200002F
-	CALL SUBOPT_0x7
-	LDD  R30,Y+16
-	LDD  R31,Y+16+1
-	LDD  R26,Z+4
-	ST   -Y,R26
-	CALL SUBOPT_0x8
-	RJMP _0x2000030
-_0x200002F:
-	CPI  R30,LOW(0x73)
-	BRNE _0x2000032
-	CALL SUBOPT_0x7
-	CALL SUBOPT_0x9
-	CALL _strlen
-	MOV  R17,R30
-	RJMP _0x2000033
-_0x2000032:
-	CPI  R30,LOW(0x70)
-	BRNE _0x2000035
-	CALL SUBOPT_0x7
-	CALL SUBOPT_0x9
-	CALL _strlenf
-	MOV  R17,R30
-	ORI  R16,LOW(8)
-_0x2000033:
-	ORI  R16,LOW(2)
-	ANDI R16,LOW(127)
-	LDI  R19,LOW(0)
-	RJMP _0x2000036
-_0x2000035:
-	CPI  R30,LOW(0x64)
-	BREQ _0x2000039
-	CPI  R30,LOW(0x69)
-	BRNE _0x200003A
-_0x2000039:
-	ORI  R16,LOW(4)
-	RJMP _0x200003B
-_0x200003A:
-	CPI  R30,LOW(0x75)
-	BRNE _0x200003C
-_0x200003B:
-	LDI  R30,LOW(_tbl10_G100*2)
-	LDI  R31,HIGH(_tbl10_G100*2)
-	STD  Y+6,R30
-	STD  Y+6+1,R31
-	LDI  R17,LOW(5)
-	RJMP _0x200003D
-_0x200003C:
-	CPI  R30,LOW(0x58)
-	BRNE _0x200003F
-	ORI  R16,LOW(8)
-	RJMP _0x2000040
-_0x200003F:
-	CPI  R30,LOW(0x78)
-	BREQ PC+2
-	RJMP _0x2000071
-_0x2000040:
-	LDI  R30,LOW(_tbl16_G100*2)
-	LDI  R31,HIGH(_tbl16_G100*2)
-	STD  Y+6,R30
-	STD  Y+6+1,R31
-	LDI  R17,LOW(4)
-_0x200003D:
-	SBRS R16,2
-	RJMP _0x2000042
-	CALL SUBOPT_0x7
+;
+;void InitDisplay(){
+; 0002 00FA void InitDisplay(){
+_InitDisplay:
+; .FSTART _InitDisplay
+; 0002 00FB     Comanda1Bit(0xAF);//on
+	LDI  R26,LOW(175)
+	RCALL _Comanda1Bit
+; 0002 00FC     Comanda2Biti(0xD5, 0x80);//clk
+	LDI  R30,LOW(213)
+	ST   -Y,R30
+	LDI  R26,LOW(128)
+	RCALL _Comanda2Biti
+; 0002 00FD     Comanda2Biti(0xA8, 0x1F);//multiplex
+	LDI  R30,LOW(168)
+	ST   -Y,R30
+	LDI  R26,LOW(31)
+	RCALL _Comanda2Biti
+; 0002 00FE     Comanda1Bit(0x40);//start line
+	LDI  R26,LOW(64)
+	RCALL _Comanda1Bit
+; 0002 00FF     Comanda2Biti(0x8D, 0x14);//charge pump
+	LDI  R30,LOW(141)
+	ST   -Y,R30
+	LDI  R26,LOW(20)
+	RCALL _Comanda2Biti
+; 0002 0100     Comanda2Biti(0xA1, 0xC8);//segmente remap
+	LDI  R30,LOW(161)
+	ST   -Y,R30
+	LDI  R26,LOW(200)
+	RCALL _Comanda2Biti
+; 0002 0101     Comanda2Biti(0xDA, 0x02);//com hw config
+	LDI  R30,LOW(218)
+	ST   -Y,R30
+	LDI  R26,LOW(2)
+	RCALL _Comanda2Biti
+; 0002 0102     Comanda2Biti(0xD3, 0x00);//offset
+	LDI  R30,LOW(211)
+	ST   -Y,R30
+	LDI  R26,LOW(0)
+	RCALL _Comanda2Biti
+; 0002 0103     Comanda2Biti(0x81, 0x05);//contrast/luminozitate
+	LDI  R30,LOW(129)
+	ST   -Y,R30
+	LDI  R26,LOW(5)
+	RCALL _Comanda2Biti
+; 0002 0104     Comanda2Biti(0xD9, 0xF1);//precharge period
+	LDI  R30,LOW(217)
+	ST   -Y,R30
+	LDI  R26,LOW(241)
+	RCALL _Comanda2Biti
+; 0002 0105     Comanda2Biti(0xDB, 0x20);//VCOMh deselect level
+	LDI  R30,LOW(219)
+	ST   -Y,R30
+	LDI  R26,LOW(32)
+	RCALL _Comanda2Biti
+; 0002 0106     Comanda3Biti(0x22, 0x00, 0x03);//page range
 	CALL SUBOPT_0xA
-	LDD  R26,Y+11
-	TST  R26
-	BRPL _0x2000043
-	LDD  R30,Y+10
-	LDD  R31,Y+10+1
-	CALL __ANEGW1
-	STD  Y+10,R30
-	STD  Y+10+1,R31
-	LDI  R20,LOW(45)
-_0x2000043:
-	CPI  R20,0
-	BREQ _0x2000044
-	SUBI R17,-LOW(1)
-	RJMP _0x2000045
-_0x2000044:
-	ANDI R16,LOW(251)
-_0x2000045:
-	RJMP _0x2000046
-_0x2000042:
-	CALL SUBOPT_0x7
-	CALL SUBOPT_0xA
-_0x2000046:
-_0x2000036:
-	SBRC R16,0
-	RJMP _0x2000047
-_0x2000048:
-	CP   R17,R21
-	BRSH _0x200004A
-	SBRS R16,7
-	RJMP _0x200004B
-	SBRS R16,2
-	RJMP _0x200004C
-	ANDI R16,LOW(251)
-	MOV  R18,R20
-	SUBI R17,LOW(1)
-	RJMP _0x200004D
-_0x200004C:
-	LDI  R18,LOW(48)
-_0x200004D:
-	RJMP _0x200004E
-_0x200004B:
-	LDI  R18,LOW(32)
-_0x200004E:
-	CALL SUBOPT_0x6
-	SUBI R21,LOW(1)
-	RJMP _0x2000048
-_0x200004A:
-_0x2000047:
-	MOV  R19,R17
-	SBRS R16,1
-	RJMP _0x200004F
-_0x2000050:
-	CPI  R19,0
-	BREQ _0x2000052
-	SBRS R16,3
-	RJMP _0x2000053
-	LDD  R30,Y+6
-	LDD  R31,Y+6+1
-	LPM  R18,Z+
-	STD  Y+6,R30
-	STD  Y+6+1,R31
-	RJMP _0x2000054
-_0x2000053:
-	LDD  R26,Y+6
-	LDD  R27,Y+6+1
-	LD   R18,X+
-	STD  Y+6,R26
-	STD  Y+6+1,R27
-_0x2000054:
-	CALL SUBOPT_0x6
-	CPI  R21,0
-	BREQ _0x2000055
-	SUBI R21,LOW(1)
-_0x2000055:
-	SUBI R19,LOW(1)
-	RJMP _0x2000050
-_0x2000052:
-	RJMP _0x2000056
-_0x200004F:
-_0x2000058:
-	LDI  R18,LOW(48)
-	LDD  R30,Y+6
-	LDD  R31,Y+6+1
-	CALL __GETW1PF
-	STD  Y+8,R30
-	STD  Y+8+1,R31
-	LDD  R30,Y+6
-	LDD  R31,Y+6+1
-	ADIW R30,2
-	STD  Y+6,R30
-	STD  Y+6+1,R31
-_0x200005A:
-	LDD  R30,Y+8
-	LDD  R31,Y+8+1
-	LDD  R26,Y+10
-	LDD  R27,Y+10+1
-	CP   R26,R30
-	CPC  R27,R31
-	BRLO _0x200005C
-	SUBI R18,-LOW(1)
-	LDD  R26,Y+8
-	LDD  R27,Y+8+1
-	LDD  R30,Y+10
-	LDD  R31,Y+10+1
-	SUB  R30,R26
-	SBC  R31,R27
-	STD  Y+10,R30
-	STD  Y+10+1,R31
-	RJMP _0x200005A
-_0x200005C:
-	CPI  R18,58
-	BRLO _0x200005D
-	SBRS R16,3
-	RJMP _0x200005E
-	SUBI R18,-LOW(7)
-	RJMP _0x200005F
-_0x200005E:
-	SUBI R18,-LOW(39)
-_0x200005F:
-_0x200005D:
-	SBRC R16,4
-	RJMP _0x2000061
-	CPI  R18,49
-	BRSH _0x2000063
-	LDD  R26,Y+8
-	LDD  R27,Y+8+1
-	SBIW R26,1
-	BRNE _0x2000062
-_0x2000063:
-	RJMP _0x20000CD
-_0x2000062:
-	CP   R21,R19
-	BRLO _0x2000067
-	SBRS R16,0
-	RJMP _0x2000068
-_0x2000067:
-	RJMP _0x2000066
-_0x2000068:
-	LDI  R18,LOW(32)
-	SBRS R16,7
-	RJMP _0x2000069
-	LDI  R18,LOW(48)
-_0x20000CD:
-	ORI  R16,LOW(16)
-	SBRS R16,2
-	RJMP _0x200006A
-	ANDI R16,LOW(251)
-	ST   -Y,R20
-	CALL SUBOPT_0x8
-	CPI  R21,0
-	BREQ _0x200006B
-	SUBI R21,LOW(1)
-_0x200006B:
-_0x200006A:
-_0x2000069:
-_0x2000061:
-	CALL SUBOPT_0x6
-	CPI  R21,0
-	BREQ _0x200006C
-	SUBI R21,LOW(1)
-_0x200006C:
-_0x2000066:
-	SUBI R19,LOW(1)
-	LDD  R26,Y+8
-	LDD  R27,Y+8+1
-	SBIW R26,2
-	BRLO _0x2000059
-	RJMP _0x2000058
-_0x2000059:
-_0x2000056:
-	SBRS R16,0
-	RJMP _0x200006D
-_0x200006E:
-	CPI  R21,0
-	BREQ _0x2000070
-	SUBI R21,LOW(1)
+; 0002 0107     Comanda3Biti(0x21, 0x00, 0x7F);//column range
+; 0002 0108     Comanda1Bit(0xA4);//all pixeli on
+	LDI  R26,LOW(164)
+	RCALL _Comanda1Bit
+; 0002 0109     Comanda1Bit(0xA6);//non inverted
+	LDI  R26,LOW(166)
+	RCALL _Comanda1Bit
+; 0002 010A     Comanda1Bit(0xAF);//display on
+	LDI  R26,LOW(175)
+	RCALL _Comanda1Bit
+; 0002 010B     Comanda2Biti(0x20, 0x00);//address mode
 	LDI  R30,LOW(32)
 	ST   -Y,R30
-	CALL SUBOPT_0x8
-	RJMP _0x200006E
-_0x2000070:
-_0x200006D:
-_0x2000071:
-_0x2000030:
-_0x20000CC:
+	LDI  R26,LOW(0)
+	RCALL _Comanda2Biti
+; 0002 010C }
+	RET
+; .FEND
+;
+;void DisplayClear(){
+; 0002 010E void DisplayClear(){
+_DisplayClear:
+; .FSTART _DisplayClear
+; 0002 010F     unsigned char i;
+; 0002 0110     Comanda3Biti(0x22, 0x00, 0x03);//page range
+	ST   -Y,R17
+;	i -> R17
+	CALL SUBOPT_0xA
+; 0002 0111     Comanda3Biti(0x21, 0x00, 0x7F);//column range
+; 0002 0112     for(i = 0U; i < 16U*4U; i++){
 	LDI  R17,LOW(0)
-_0x200001B:
-	RJMP _0x2000016
-_0x2000018:
-	LDD  R26,Y+12
-	LDD  R27,Y+12+1
-	CALL __GETW1P
+_0x40049:
+	CPI  R17,64
+	BRSH _0x4004A
+; 0002 0113         PrintCaracterDisplay(32);
+	LDI  R26,LOW(32)
+	RCALL _PrintCaracterDisplay
+; 0002 0114     }
+	SUBI R17,-1
+	RJMP _0x40049
+_0x4004A:
+; 0002 0115 }
+_0x20A0001:
+	LD   R17,Y+
+	RET
+; .FEND
+;
+;void RotescLiterele(){
+; 0002 0117 void RotescLiterele(){
+_RotescLiterele:
+; .FSTART _RotescLiterele
+; 0002 0118     unsigned char CharactersLine, BitmapCharacterIndex, BitmapLineIndex, i;
+; 0002 0119     unsigned char TempCharactersLine[8];
+; 0002 011A     int j;
+; 0002 011B     for(BitmapCharacterIndex = 0U; BitmapCharacterIndex < 65U; BitmapCharacterIndex++){
+	SBIW R28,8
+	CALL __SAVELOCR6
+;	CharactersLine -> R17
+;	BitmapCharacterIndex -> R16
+;	BitmapLineIndex -> R19
+;	i -> R18
+;	TempCharactersLine -> Y+6
+;	j -> R20,R21
+	LDI  R16,LOW(0)
+_0x4004C:
+	MOV  R26,R16
+	CLR  R27
+	CPI  R26,LOW(0x41)
+	LDI  R30,HIGH(0x41)
+	CPC  R27,R30
+	BRGE _0x4004D
+; 0002 011C         for(BitmapLineIndex = 0U; BitmapLineIndex < 8U; BitmapLineIndex++){
+	LDI  R19,LOW(0)
+_0x4004F:
+	MOV  R26,R19
+	CLR  R27
+	SBIW R26,8
+	BRGE _0x40050
+; 0002 011D             CharactersLine = 0;
+	LDI  R17,LOW(0)
+; 0002 011E             for(j = 7U; j >= 0U; j--){
+	__GETWRN 20,21,7
+_0x40052:
+	TST  R21
+	BRMI _0x40053
+; 0002 011F                 CharactersLine = CharactersLine << 1U;
+	LSL  R17
+; 0002 0120                 CharactersLine += ((font8x8_basic[BitmapCharacterIndex][j]) >> BitmapLineIndex) % 2U;
+	MOV  R30,R16
+	CALL SUBOPT_0x8
+	ADD  R30,R20
+	ADC  R31,R21
+	LD   R26,Z
+	MOV  R30,R19
+	CALL __LSRB12
+	ANDI R30,LOW(0x1)
+	ADD  R17,R30
+; 0002 0121             }
+	__SUBWRN 20,21,1
+	RJMP _0x40052
+_0x40053:
+; 0002 0122             TempCharactersLine[BitmapLineIndex] = CharactersLine;
+	MOV  R30,R19
+	LDI  R31,0
+	MOVW R26,R28
+	ADIW R26,6
+	ADD  R30,R26
+	ADC  R31,R27
+	ST   Z,R17
+; 0002 0123         }
+	SUBI R19,-1
+	RJMP _0x4004F
+_0x40050:
+; 0002 0124         for(i = 0U; i < 8U; i++){
+	LDI  R18,LOW(0)
+_0x40055:
+	MOV  R26,R18
+	CLR  R27
+	SBIW R26,8
+	BRGE _0x40056
+; 0002 0125             font8x8_basic[BitmapCharacterIndex][i] = TempCharactersLine[i];
+	MOV  R30,R16
+	CALL SUBOPT_0x8
+	MOVW R26,R30
+	MOV  R30,R18
+	LDI  R31,0
+	ADD  R30,R26
+	ADC  R31,R27
+	MOVW R0,R30
+	MOV  R30,R18
+	LDI  R31,0
+	MOVW R26,R28
+	ADIW R26,6
+	ADD  R26,R30
+	ADC  R27,R31
+	LD   R30,X
+	MOVW R26,R0
+	ST   X,R30
+; 0002 0126         }
+	SUBI R18,-1
+	RJMP _0x40055
+_0x40056:
+; 0002 0127     }
+	SUBI R16,-1
+	RJMP _0x4004C
+_0x4004D:
+; 0002 0128 }
 	CALL __LOADLOCR6
-	ADIW R28,20
+	ADIW R28,14
 	RET
 ; .FEND
-_printf:
-; .FSTART _printf
-	PUSH R15
-	MOV  R15,R24
-	SBIW R28,6
+;
+;void PrinteazaJocDisplay(){
+; 0002 012A void PrinteazaJocDisplay(){
+_PrinteazaJocDisplay:
+; .FSTART _PrinteazaJocDisplay
+; 0002 012B     unsigned char i = 0, j=0;
+; 0002 012C     Comanda3Biti(0x22, 0x00, 0x03);//page range
 	ST   -Y,R17
 	ST   -Y,R16
-	MOVW R26,R28
-	ADIW R26,4
-	CALL __ADDW2R15
-	MOVW R16,R26
-	LDI  R30,LOW(0)
-	STD  Y+4,R30
-	STD  Y+4+1,R30
-	STD  Y+6,R30
-	STD  Y+6+1,R30
-	MOVW R26,R28
-	ADIW R26,8
-	CALL __ADDW2R15
-	CALL __GETW1P
-	ST   -Y,R31
-	ST   -Y,R30
-	ST   -Y,R17
-	ST   -Y,R16
-	LDI  R30,LOW(_put_usart_G100)
-	LDI  R31,HIGH(_put_usart_G100)
-	ST   -Y,R31
-	ST   -Y,R30
-	MOVW R26,R28
-	ADIW R26,8
-	RCALL __print_G100
-	LDD  R17,Y+1
-	LDD  R16,Y+0
-	ADIW R28,8
-	POP  R15
+;	i -> R17
+;	j -> R16
+	LDI  R17,0
+	LDI  R16,0
+	CALL SUBOPT_0xA
+; 0002 012D     Comanda3Biti(0x21, 0x00, 0x7F);//column range
+; 0002 012E     for(i=0;i<3;i++){
+	LDI  R17,LOW(0)
+_0x40058:
+	CPI  R17,3
+	BRSH _0x40059
+; 0002 012F         for(j=0;j<3;j++){
+	LDI  R16,LOW(0)
+_0x4005B:
+	CPI  R16,3
+	BRSH _0x4005C
+; 0002 0130             PrintCaracterDisplay(displayJoc[i*3U+j]);//printez matricea jocului 3x3
+	LDI  R30,LOW(3)
+	MUL  R30,R17
+	MOVW R30,R0
+	MOVW R26,R30
+	MOV  R30,R16
+	LDI  R31,0
+	ADD  R30,R26
+	ADC  R31,R27
+	SUBI R30,LOW(-_displayJoc)
+	SBCI R31,HIGH(-_displayJoc)
+	LD   R26,Z
+	RCALL _PrintCaracterDisplay
+; 0002 0131         }
+	SUBI R16,-1
+	RJMP _0x4005B
+_0x4005C:
+; 0002 0132         for(j=3;j<16;j++){
+	LDI  R16,LOW(3)
+_0x4005E:
+	CPI  R16,16
+	BRSH _0x4005F
+; 0002 0133             PrintCaracterDisplay(' ');
+	LDI  R26,LOW(32)
+	RCALL _PrintCaracterDisplay
+; 0002 0134         }
+	SUBI R16,-1
+	RJMP _0x4005E
+_0x4005F:
+; 0002 0135     }
+	SUBI R17,-1
+	RJMP _0x40058
+_0x40059:
+; 0002 0136 }
+	LD   R16,Y+
+	LD   R17,Y+
 	RET
 ; .FEND
+	#ifndef __SLEEP_DEFINED__
+	#define __SLEEP_DEFINED__
+	.EQU __se_bit=0x01
+	.EQU __sm_mask=0x0E
+	.EQU __sm_powerdown=0x04
+	.EQU __sm_powersave=0x06
+	.EQU __sm_standby=0x0C
+	.EQU __sm_ext_standby=0x0E
+	.EQU __sm_adc_noise_red=0x02
+	.SET power_ctrl_reg=smcr
+	#endif
 
 	.CSEG
-_strlen:
-; .FSTART _strlen
-	ST   -Y,R27
-	ST   -Y,R26
-    ld   r26,y+
-    ld   r27,y+
-    clr  r30
-    clr  r31
-strlen0:
-    ld   r22,x+
-    tst  r22
-    breq strlen1
-    adiw r30,1
-    rjmp strlen0
-strlen1:
-    ret
-; .FEND
-_strlenf:
-; .FSTART _strlenf
-	ST   -Y,R27
-	ST   -Y,R26
-    clr  r26
-    clr  r27
-    ld   r30,y+
-    ld   r31,y+
-strlenf0:
-	lpm  r0,z+
-    tst  r0
-    breq strlenf1
-    adiw r26,1
-    rjmp strlenf0
-strlenf1:
-    movw r30,r26
-    ret
-; .FEND
+
+	.CSEG
 
 	.CSEG
 
@@ -3330,33 +2924,73 @@ _rx_buffer0:
 	.BYTE 0x8
 _tx_buffer0:
 	.BYTE 0x8
+_castigat:
+	.BYTE 0x1
+_remiza:
+	.BYTE 0x1
 _displayJoc:
 	.BYTE 0x9
+_font8x8_basic:
+	.BYTE 0x208
 _StareButoaneInainte_S0020000000:
 	.BYTE 0x2
-__displaymode:
-	.BYTE 0x1
-__numlines:
-	.BYTE 0x1
-__cols:
-	.BYTE 0x1
-__rows:
-	.BYTE 0x1
-__backlightval:
-	.BYTE 0x1
 __seed_G102:
 	.BYTE 0x4
 
 	.CSEG
-;OPTIMIZER ADDED SUBROUTINE, CALLED 4 TIMES, CODE SIZE REDUCTION:3 WORDS
+;OPTIMIZER ADDED SUBROUTINE, CALLED 4 TIMES, CODE SIZE REDUCTION:9 WORDS
 SUBOPT_0x0:
+	OUT  0x2,R30
+	LDI  R30,LOW(255)
+	OUT  0x1,R30
+	__DELAY_USB 7
+	RET
+
+;OPTIMIZER ADDED SUBROUTINE, CALLED 4 TIMES, CODE SIZE REDUCTION:3 WORDS
+SUBOPT_0x1:
+	OUT  0x1,R30
+	LDI  R30,LOW(0)
+	STD  Y+1,R30
+	STD  Y+1+1,R30
+	RET
+
+;OPTIMIZER ADDED SUBROUTINE, CALLED 5 TIMES, CODE SIZE REDUCTION:9 WORDS
+SUBOPT_0x2:
+	LDD  R30,Y+1
+	LDD  R31,Y+1+1
+	ADIW R30,1
+	STD  Y+1,R30
+	STD  Y+1+1,R31
+	RET
+
+;OPTIMIZER ADDED SUBROUTINE, CALLED 4 TIMES, CODE SIZE REDUCTION:9 WORDS
+SUBOPT_0x3:
+	LDD  R26,Y+5
+	LDD  R27,Y+5+1
+	OR   R30,R26
+	OR   R31,R27
+	STD  Y+5,R30
+	STD  Y+5+1,R31
+	RET
+
+;OPTIMIZER ADDED SUBROUTINE, CALLED 3 TIMES, CODE SIZE REDUCTION:3 WORDS
+SUBOPT_0x4:
+	LDD  R30,Y+1
 	LDI  R26,LOW(1)
 	LDI  R27,HIGH(1)
 	CALL __LSLW12
 	RET
 
-;OPTIMIZER ADDED SUBROUTINE, CALLED 2 TIMES, CODE SIZE REDUCTION:10 WORDS
-SUBOPT_0x1:
+;OPTIMIZER ADDED SUBROUTINE, CALLED 3 TIMES, CODE SIZE REDUCTION:1 WORDS
+SUBOPT_0x5:
+	SUBI R30,LOW(-_displayJoc)
+	SBCI R31,HIGH(-_displayJoc)
+	LD   R26,Z
+	CPI  R26,LOW(0x2E)
+	RET
+
+;OPTIMIZER ADDED SUBROUTINE, CALLED 2 TIMES, CODE SIZE REDUCTION:8 WORDS
+SUBOPT_0x6:
 	LDI  R30,LOW(3)
 	MUL  R30,R16
 	MOVW R22,R0
@@ -3369,107 +3003,161 @@ SUBOPT_0x1:
 	SBC  R31,R27
 	ADD  R30,R22
 	ADC  R31,R23
-	SUBI R30,LOW(-_displayJoc)
-	SBCI R31,HIGH(-_displayJoc)
 	RET
 
-;OPTIMIZER ADDED SUBROUTINE, CALLED 4 TIMES, CODE SIZE REDUCTION:9 WORDS
-SUBOPT_0x2:
-	OUT  0x2,R30
-	LDI  R30,LOW(255)
-	OUT  0x1,R30
-	__DELAY_USB 7
-	RET
-
-;OPTIMIZER ADDED SUBROUTINE, CALLED 4 TIMES, CODE SIZE REDUCTION:3 WORDS
-SUBOPT_0x3:
-	OUT  0x1,R30
-	LDI  R30,LOW(0)
-	STD  Y+1,R30
-	STD  Y+1+1,R30
-	RET
-
-;OPTIMIZER ADDED SUBROUTINE, CALLED 5 TIMES, CODE SIZE REDUCTION:9 WORDS
-SUBOPT_0x4:
-	LDD  R30,Y+1
-	LDD  R31,Y+1+1
-	ADIW R30,1
-	STD  Y+1,R30
-	STD  Y+1+1,R31
-	RET
-
-;OPTIMIZER ADDED SUBROUTINE, CALLED 4 TIMES, CODE SIZE REDUCTION:9 WORDS
-SUBOPT_0x5:
-	LDD  R26,Y+5
-	LDD  R27,Y+5+1
-	OR   R30,R26
-	OR   R31,R27
-	STD  Y+5,R30
-	STD  Y+5+1,R31
-	RET
-
-;OPTIMIZER ADDED SUBROUTINE, CALLED 5 TIMES, CODE SIZE REDUCTION:13 WORDS
-SUBOPT_0x6:
-	ST   -Y,R18
-	LDD  R26,Y+13
-	LDD  R27,Y+13+1
-	LDD  R30,Y+15
-	LDD  R31,Y+15+1
-	ICALL
-	RET
-
-;OPTIMIZER ADDED SUBROUTINE, CALLED 5 TIMES, CODE SIZE REDUCTION:9 WORDS
+;OPTIMIZER ADDED SUBROUTINE, CALLED 4 TIMES, CODE SIZE REDUCTION:6 WORDS
 SUBOPT_0x7:
-	LDD  R30,Y+16
-	LDD  R31,Y+16+1
-	SBIW R30,4
-	STD  Y+16,R30
-	STD  Y+16+1,R31
-	RET
+	CALL _i2c_start
+	LDI  R26,LOW(120)
+	JMP  _i2c_write
 
 ;OPTIMIZER ADDED SUBROUTINE, CALLED 3 TIMES, CODE SIZE REDUCTION:3 WORDS
 SUBOPT_0x8:
-	LDD  R26,Y+13
-	LDD  R27,Y+13+1
-	LDD  R30,Y+15
-	LDD  R31,Y+15+1
-	ICALL
+	LDI  R31,0
+	CALL __LSLW3
+	SUBI R30,LOW(-_font8x8_basic)
+	SBCI R31,HIGH(-_font8x8_basic)
 	RET
 
-;OPTIMIZER ADDED SUBROUTINE, CALLED 2 TIMES, CODE SIZE REDUCTION:4 WORDS
+;OPTIMIZER ADDED SUBROUTINE, CALLED 3 TIMES, CODE SIZE REDUCTION:7 WORDS
 SUBOPT_0x9:
-	LDD  R26,Y+16
-	LDD  R27,Y+16+1
-	ADIW R26,4
-	CALL __GETW1P
-	STD  Y+6,R30
-	STD  Y+6+1,R31
-	LDD  R26,Y+6
-	LDD  R27,Y+6+1
-	RET
+	CALL _i2c_write
+	LD   R26,Y
+	CALL _i2c_write
+	JMP  _i2c_stop
 
-;OPTIMIZER ADDED SUBROUTINE, CALLED 2 TIMES, CODE SIZE REDUCTION:2 WORDS
+;OPTIMIZER ADDED SUBROUTINE, CALLED 3 TIMES, CODE SIZE REDUCTION:21 WORDS
 SUBOPT_0xA:
-	LDD  R26,Y+16
-	LDD  R27,Y+16+1
-	ADIW R26,4
-	CALL __GETW1P
-	STD  Y+10,R30
-	STD  Y+10+1,R31
-	RET
+	LDI  R30,LOW(34)
+	ST   -Y,R30
+	LDI  R30,LOW(0)
+	ST   -Y,R30
+	LDI  R26,LOW(3)
+	CALL _Comanda3Biti
+	LDI  R30,LOW(33)
+	ST   -Y,R30
+	LDI  R30,LOW(0)
+	ST   -Y,R30
+	LDI  R26,LOW(127)
+	JMP  _Comanda3Biti
 
 
 	.CSEG
-__ADDW2R15:
-	CLR  R0
-	ADD  R26,R15
-	ADC  R27,R0
-	RET
+	.equ __sda_bit=1
+	.equ __scl_bit=0
+	.equ __i2c_port=0x08 ;PORTC
+	.equ __i2c_dir=__i2c_port-1
+	.equ __i2c_pin=__i2c_port-2
 
-__ANEGW1:
-	NEG  R31
-	NEG  R30
-	SBCI R31,0
+_i2c_init:
+	cbi  __i2c_port,__scl_bit
+	cbi  __i2c_port,__sda_bit
+	sbi  __i2c_dir,__scl_bit
+	cbi  __i2c_dir,__sda_bit
+	rjmp __i2c_delay2
+_i2c_start:
+	cbi  __i2c_dir,__sda_bit
+	cbi  __i2c_dir,__scl_bit
+	clr  r30
+	nop
+	sbis __i2c_pin,__sda_bit
+	ret
+	sbis __i2c_pin,__scl_bit
+	ret
+	rcall __i2c_delay1
+	sbi  __i2c_dir,__sda_bit
+	rcall __i2c_delay1
+	sbi  __i2c_dir,__scl_bit
+	ldi  r30,1
+__i2c_delay1:
+	ldi  r22,33
+	rjmp __i2c_delay2l
+_i2c_stop:
+	sbi  __i2c_dir,__sda_bit
+	sbi  __i2c_dir,__scl_bit
+	rcall __i2c_delay2
+	cbi  __i2c_dir,__scl_bit
+	rcall __i2c_delay1
+	cbi  __i2c_dir,__sda_bit
+__i2c_delay2:
+	ldi  r22,67
+__i2c_delay2l:
+	dec  r22
+	brne __i2c_delay2l
+	ret
+_i2c_read:
+	ldi  r23,8
+__i2c_read0:
+	cbi  __i2c_dir,__scl_bit
+	rcall __i2c_delay1
+__i2c_read3:
+	sbis __i2c_pin,__scl_bit
+	rjmp __i2c_read3
+	rcall __i2c_delay1
+	clc
+	sbic __i2c_pin,__sda_bit
+	sec
+	sbi  __i2c_dir,__scl_bit
+	rcall __i2c_delay2
+	rol  r30
+	dec  r23
+	brne __i2c_read0
+	mov  r23,r26
+	tst  r23
+	brne __i2c_read1
+	cbi  __i2c_dir,__sda_bit
+	rjmp __i2c_read2
+__i2c_read1:
+	sbi  __i2c_dir,__sda_bit
+__i2c_read2:
+	rcall __i2c_delay1
+	cbi  __i2c_dir,__scl_bit
+	rcall __i2c_delay2
+	sbi  __i2c_dir,__scl_bit
+	rcall __i2c_delay1
+	cbi  __i2c_dir,__sda_bit
+	rjmp __i2c_delay1
+
+_i2c_write:
+	ldi  r23,8
+__i2c_write0:
+	lsl  r26
+	brcc __i2c_write1
+	cbi  __i2c_dir,__sda_bit
+	rjmp __i2c_write2
+__i2c_write1:
+	sbi  __i2c_dir,__sda_bit
+__i2c_write2:
+	rcall __i2c_delay2
+	cbi  __i2c_dir,__scl_bit
+	rcall __i2c_delay1
+__i2c_write3:
+	sbis __i2c_pin,__scl_bit
+	rjmp __i2c_write3
+	rcall __i2c_delay1
+	sbi  __i2c_dir,__scl_bit
+	dec  r23
+	brne __i2c_write0
+	cbi  __i2c_dir,__sda_bit
+	rcall __i2c_delay1
+	cbi  __i2c_dir,__scl_bit
+	rcall __i2c_delay2
+	ldi  r30,1
+	sbic __i2c_pin,__sda_bit
+	clr  r30
+	sbi  __i2c_dir,__scl_bit
+	rjmp __i2c_delay1
+
+__LSRB12:
+	TST  R30
+	MOV  R0,R30
+	MOV  R30,R26
+	BREQ __LSRB12R
+__LSRB12L:
+	LSR  R30
+	DEC  R0
+	BRNE __LSRB12L
+__LSRB12R:
 	RET
 
 __LSLW12:
@@ -3496,25 +3184,6 @@ __LSLW2:
 	ROL  R31
 	LSL  R30
 	ROL  R31
-	RET
-
-__GETW1P:
-	LD   R30,X+
-	LD   R31,X
-	SBIW R26,1
-	RET
-
-__GETW1PF:
-	LPM  R0,Z+
-	LPM  R31,Z
-	MOV  R30,R0
-	RET
-
-__PUTPARD1:
-	ST   -Y,R23
-	ST   -Y,R22
-	ST   -Y,R31
-	ST   -Y,R30
 	RET
 
 __SWAPW12:

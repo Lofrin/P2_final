@@ -135,8 +135,8 @@ DIDR1=0x00;
 #asm("wdr")
 // Write 2 consecutive values to enable watchdog
 // this is NOT a mistake !
-WDTCSR=0x18;
-WDTCSR=0x08;
+WDTCSR=0x10;
+WDTCSR=0x00;
 #ifdef _OPTIMIZE_SIZE_
 #pragma optsize+
 #endif

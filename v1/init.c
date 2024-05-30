@@ -102,7 +102,7 @@ PCICR=0x00;
 
 // Timer/Counter 0,1,2 Interrupt(s) initialization
 TIMSK0=0x00;
-TIMSK1=0x02;
+TIMSK1=0x00;
 TIMSK2=0x00;
 
 // USART0 initialization
